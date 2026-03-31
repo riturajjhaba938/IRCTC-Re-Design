@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const chatTranslations = {
@@ -8,7 +8,7 @@ const chatTranslations = {
         send: "Send",
         botGreeting: "Welcome to IRCTC Support! I am Disha. How can I assist you today?",
         quickRepliesTitle: "Suggested Queries:",
-        followUpText: "Was this helpful? Ask another question:",
+        followUpText: "Need more help? Pick a topic:",
         teaserText: "Hi! Need help booking? 👋",
         quickReplies: [
             { id: "book", label: "Book Ticket" },
@@ -46,7 +46,7 @@ const chatTranslations = {
         send: "भेजें",
         botGreeting: "IRCTC सहायता में आपका स्वागत है! मैं दिशा हूँ। आज मैं आपकी कैसे मदद कर सकती हूँ?",
         quickRepliesTitle: "सुझाए गए प्रश्न:",
-        followUpText: "क्या यह सहायक था? एक और प्रश्न पूछें:",
+        followUpText: "और मदद चाहिए? एक विषय चुनें:",
         teaserText: "नमस्ते! बुकिंग में मदद चाहिए? 👋",
         quickReplies: [
             { id: "book", label: "टिकट बुक करें" },
@@ -89,6 +89,7 @@ const ChatWidget = () => {
     const [messages, setMessages] = useState([{ sender: 'bot', text: chatTranslations[lang]?.botGreeting || chatTranslations['en'].botGreeting }]);
     const [input, setInput] = useState('');
     const [isTyping, setIsTyping] = useState(false);
+    const [showChips, setShowChips] = useState(true);
     const messagesEndRef = useRef(null);
     const teaserTimerRef = useRef(null);
 
@@ -111,14 +112,19 @@ const ChatWidget = () => {
     useEffect(() => {
         const currentT = chatTranslations[lang] || chatTranslations['en'];
         setMessages([{ sender: 'bot', text: currentT.botGreeting }]);
+        setShowChips(true);
     }, [lang]);
 
-    // Auto-scroll
+    // Auto-scroll to bottom
+    const scrollToBottom = useCallback(() => {
+        setTimeout(() => {
+            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+    }, []);
+
     useEffect(() => {
-        if (isOpen && messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [messages, isOpen, isTyping]);
+        if (isOpen) scrollToBottom();
+    }, [messages, isOpen, isTyping, showChips, scrollToBottom]);
 
     const determineResponse = (text) => {
         const lowerText = text.toLowerCase();
@@ -147,6 +153,7 @@ const ChatWidget = () => {
         const messageText = overrideText || input;
         if (!messageText.trim()) return;
 
+        setShowChips(false);
         setMessages(prev => [...prev, { sender: 'user', text: messageText }]);
         setInput('');
         setIsTyping(true);
@@ -160,6 +167,7 @@ const ChatWidget = () => {
             }
             setMessages(prev => [...prev, { sender: 'bot', text: botReply }]);
             setIsTyping(false);
+            setShowChips(true);
         }, 1000);
     };
 
@@ -172,16 +180,16 @@ const ChatWidget = () => {
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
             {/* Chat Window */}
             <div className={`pointer-events-auto transition-all duration-500 ease-out origin-bottom-right ${isOpen ? 'scale-100 opacity-100 mb-4' : 'scale-75 opacity-0 invisible mb-0 h-0 w-0'}`}>
-                <div className="bg-surface-container-lowest rounded-[2rem] shadow-[0_20px_60px_rgba(20,29,30,0.15)] border border-outline-variant/10 flex flex-col h-[520px] w-[370px] md:w-[410px] overflow-hidden">
+                <div className="bg-surface-container-lowest rounded-[2rem] shadow-[0_20px_60px_rgba(20,29,30,0.15)] border border-outline-variant/10 flex flex-col h-[540px] w-[370px] md:w-[410px] overflow-hidden">
                     {/* Header */}
-                    <div className="bg-primary text-on-primary p-5 flex justify-between items-center shrink-0 relative overflow-hidden">
+                    <div className="bg-primary text-on-primary p-4 flex justify-between items-center shrink-0 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/3"></div>
                         <div className="flex items-center gap-3 z-10">
                             <div className="w-10 h-10 bg-surface text-primary rounded-full flex justify-center items-center shadow-md">
                                 <span className="material-symbols-outlined text-[20px]" style={{fontVariationSettings: "'FILL' 1"}}>support_agent</span>
                             </div>
                             <div>
-                                <h3 className="font-black text-lg">{t.chatTitle}</h3>
+                                <h3 className="font-black text-base">{t.chatTitle}</h3>
                                 <div className="flex items-center gap-1.5 mt-0.5">
                                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                     <span className="text-[10px] font-medium text-white/80 uppercase tracking-widest">Online</span>
@@ -194,11 +202,11 @@ const ChatWidget = () => {
                     </div>
 
                     {/* Messages Area */}
-                    <div className="flex-1 p-5 overflow-y-auto space-y-4 bg-surface/50 scrollbar-hide">
+                    <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-surface/50 scrollbar-hide">
                         {messages.map((msg, idx) => (
                             <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-in`}>
-                                <div className={`max-w-[85%] rounded-2xl p-4 shadow-sm ${msg.sender === 'user' ? 'bg-primary text-on-primary rounded-tr-sm' : 'bg-surface-container-low text-on-surface rounded-tl-sm border border-outline-variant/10'}`}>
-                                    <p className="text-[14px] leading-relaxed whitespace-pre-line">{msg.text}</p>
+                                <div className={`max-w-[85%] rounded-2xl p-3.5 shadow-sm ${msg.sender === 'user' ? 'bg-primary text-on-primary rounded-tr-sm' : 'bg-surface-container-low text-on-surface rounded-tl-sm border border-outline-variant/10'}`}>
+                                    <p className="text-[13px] leading-relaxed whitespace-pre-line">{msg.text}</p>
                                 </div>
                             </div>
                         ))}
@@ -213,18 +221,18 @@ const ChatWidget = () => {
                             </div>
                         )}
 
-                        {/* Follow-up suggestions after every bot response */}
-                        {messages[messages.length - 1]?.sender === 'bot' && !isTyping && (
-                            <div className="pt-2 pb-1">
-                                <p className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-3 px-1">
+                        {/* Follow-up query chips — always visible after bot responds */}
+                        {showChips && !isTyping && (
+                            <div className="pt-3 pb-1 animate-in">
+                                <p className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2.5 px-1">
                                     {messages.length > 1 ? t.followUpText : t.quickRepliesTitle}
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-1.5">
                                     {t.quickReplies.map((reply, i) => (
                                         <button 
                                             key={i} 
                                             onClick={() => handleSendMessage(null, reply.id, reply.label)}
-                                            className="text-[12px] bg-secondary-fixed/50 hover:bg-secondary-fixed text-on-secondary-fixed font-bold py-2 px-3.5 rounded-full transition-all active:scale-95 shadow-sm border border-secondary/10"
+                                            className="text-[11px] bg-primary/10 hover:bg-primary hover:text-on-primary text-primary font-bold py-1.5 px-3 rounded-full transition-all active:scale-95 border border-primary/20"
                                         >
                                             {reply.label}
                                         </button>
@@ -236,22 +244,22 @@ const ChatWidget = () => {
                     </div>
 
                     {/* Input Area */}
-                    <div className="p-4 bg-surface border-t border-outline-variant/10 shrink-0">
-                        <form onSubmit={(e) => handleSendMessage(e)} className="flex items-center gap-3">
+                    <div className="p-3 bg-surface border-t border-outline-variant/10 shrink-0">
+                        <form onSubmit={(e) => handleSendMessage(e)} className="flex items-center gap-2">
                             <input 
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder={t.chatPlaceholder}
-                                className="flex-1 bg-surface-container-low border-none rounded-2xl py-3 px-5 text-sm font-medium focus:ring-2 focus:ring-primary outline-none transition-shadow text-on-surface"
+                                className="flex-1 bg-surface-container-low border-none rounded-2xl py-3 px-4 text-sm font-medium focus:ring-2 focus:ring-primary outline-none transition-shadow text-on-surface"
                                 disabled={isTyping}
                             />
                             <button 
                                 type="submit" 
                                 disabled={!input.trim() || isTyping}
-                                className="w-12 h-12 bg-primary text-on-primary rounded-2xl flex items-center justify-center disabled:opacity-50 transition-all hover:bg-primary/90 shadow-md shadow-primary/20 active:scale-95"
+                                className="w-11 h-11 bg-primary text-on-primary rounded-2xl flex items-center justify-center disabled:opacity-50 transition-all hover:bg-primary/90 shadow-md shadow-primary/20 active:scale-95 shrink-0"
                             >
-                                <span className="material-symbols-outlined text-[20px]">send</span>
+                                <span className="material-symbols-outlined text-[18px]">send</span>
                             </button>
                         </form>
                     </div>
@@ -261,7 +269,7 @@ const ChatWidget = () => {
             {/* Teaser Popup Bubble */}
             {!isOpen && showTeaser && (
                 <div 
-                    className="pointer-events-auto mb-3 bg-surface-container-lowest text-on-surface rounded-2xl rounded-br-sm shadow-[0_8px_30px_rgba(0,0,0,0.12)] px-4 py-3 cursor-pointer hover:shadow-lg transition-all animate-in border border-outline-variant/10 max-w-[220px]"
+                    className="pointer-events-auto mb-3 relative bg-surface-container-lowest text-on-surface rounded-2xl rounded-br-sm shadow-[0_8px_30px_rgba(0,0,0,0.12)] px-4 py-3 cursor-pointer hover:shadow-lg transition-all animate-in border border-outline-variant/10 max-w-[220px]"
                     onClick={handleOpenChat}
                 >
                     <div className="flex items-center gap-2">
