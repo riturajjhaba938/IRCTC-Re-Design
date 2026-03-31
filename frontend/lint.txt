@@ -1,0 +1,80 @@
+﻿
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\components\ChatWidget.jsx
+  59:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  57 |     // Initial load
+  58 |     useEffect(() => {
+> 59 |         setMessages([{ sender: 'bot', text: t.botGreeting }]);
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  60 |     }, [lang, t.botGreeting]);
+  61 |
+  62 |     // Auto-scroll  react-hooks/set-state-in-effect
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\context\LanguageContext.jsx
+  21:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\Booking.jsx
+   8:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+   9:11  error  'location' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+  16:12  error  'currentStep' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  16:25  error  'setCurrentStep' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  17:12  error  'passengers' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+  17:24  error  'setPassengers' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u   no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\Homepage.jsx
+   9:23  error  'train_search_form' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  16:11  error  'isActive' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u           no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\MyTrips.jsx
+  3:8   error  'dummyData' is defined but never used. Allowed unused vars must match /^[A-Z_]/u          no-unused-vars
+  8:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  9:11  error  'location' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\PNRStatus.jsx
+  3:8   error  'dummyData' is defined but never used. Allowed unused vars must match /^[A-Z_]/u          no-unused-vars
+  8:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  9:11  error  'location' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\SearchResults.jsx
+  24:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  30:11  error  'isActive' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\Services.jsx
+  3:8   error  'dummyData' is defined but never used. Allowed unused vars must match /^[A-Z_]/u          no-unused-vars
+  8:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  9:11  error  'location' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Swaraj\UI UX hackathon\IRCTC-Re-Design\frontend\src\pages\Support.jsx
+   3:8   error    'dummyData' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  51:11  error    'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+  55:11  error    'isActive' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+  57:42  error    'setLang' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  75:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  73 |     useEffect(() => {
+  74 |         if (messages.length === 1 && messages[0].sender === 'bot') {
+> 75 |             setMessages([{ sender: 'bot', text: translations[lang].botGreeting }]);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  76 |         }
+  77 |     }, [lang]);
+  78 |  react-hooks/set-state-in-effect
+  77:8   warning  React Hook useEffect has a missing dependency: 'messages'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+Γ£û 27 problems (26 errors, 1 warning)
+

@@ -35,24 +35,24 @@ const Homepage = () => {
 
             <main className="pt-24 pb-32">
                 {/* Hero Section */}
-                <section className="relative px-6 py-20 md:py-28 overflow-hidden rounded-b-[2rem] md:rounded-b-[4rem] mb-12 shadow-sm border-b border-outline-variant/10">
+                <section className="relative px-4 sm:px-6 py-16 sm:py-20 md:py-28 overflow-hidden rounded-b-[2rem] md:rounded-b-[4rem] mb-8 sm:mb-12 shadow-sm border-b border-outline-variant/10">
                     <div className="absolute inset-0 z-0">
                         <img src="/vande_bharat_bg.png" alt="Vande Bharat Express" className="w-full h-full object-cover object-center" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-surface/80 via-surface/60 to-surface"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-surface"></div>
                     </div>
-                    <div className="max-w-7xl mx-auto relative z-10 text-center mb-16">
-                        <h1 className="text-5xl md:text-7xl font-black text-on-surface -tracking-[0.03em] mb-6 leading-tight drop-shadow-md">
+                    <div className="max-w-7xl mx-auto relative z-10 text-center mb-8 sm:mb-16">
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white -tracking-[0.03em] mb-4 sm:mb-6 leading-tight" style={{textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)'}}>
                             {hpText.heroTitle || 'Book Your Train Ticket Seamlessly'}
                         </h1>
-                        <p className="text-on-surface-variant max-w-xl mx-auto text-lg md:text-xl font-medium opacity-90 drop-shadow-sm">
+                        <p className="text-white/90 max-w-xl mx-auto text-sm sm:text-lg md:text-xl font-medium" style={{textShadow: '0 1px 10px rgba(0,0,0,0.4)'}}>
                             Premium rail experiences curated for the modern traveller. Fast, seamless, and unmistakably Indian.
                         </p>
                     </div>
 
                     {/* Search Card Bento-style */}
-                    <div className="max-w-5xl mx-auto">
-                        <div className="bg-surface-container-low rounded-[2rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(20,29,30,0.06)] relative">
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+                    <div className="max-w-5xl mx-auto px-2 sm:px-0">
+                        <div className="bg-surface-container-low rounded-2xl sm:rounded-[2rem] p-4 sm:p-8 md:p-10 shadow-[0_20px_40px_rgba(20,29,30,0.06)] relative">
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-end">
                                 {/* From/To */}
                                 <div className="md:col-span-5 flex items-center gap-4 relative">
                                     <div className="flex-1 group">
@@ -61,7 +61,7 @@ const Homepage = () => {
                                             <div className="flex items-center gap-3">
                                                 <span className="material-symbols-outlined text-primary/60">location_on</span>
                                                 <input 
-                                                    className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl outline-none placeholder:text-on-surface-variant/40" 
+                                                    className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-xl outline-none placeholder:text-on-surface-variant/40 text-on-surface" 
                                                     placeholder="Departure City" 
                                                     type="text" 
                                                     value={fromStation}
@@ -78,7 +78,7 @@ const Homepage = () => {
                                         <div className="bg-surface-container-lowest p-5 rounded-2xl transition-all duration-300 group-focus-within:ring-2 group-focus-within:ring-primary/20">
                                             <div className="flex items-center gap-3 justify-end text-right">
                                                 <input 
-                                                    className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl text-right outline-none placeholder:text-on-surface-variant/40" 
+                                                    className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-xl text-right outline-none placeholder:text-on-surface-variant/40 text-on-surface" 
                                                     placeholder="Arrival City" 
                                                     type="text" 
                                                     value={toStation}
@@ -97,7 +97,7 @@ const Homepage = () => {
                                         <div className="flex items-center gap-3">
                                             <span className="material-symbols-outlined text-primary/60">calendar_today</span>
                                             <input 
-                                                className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl outline-none" 
+                                                className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-xl outline-none text-on-surface" 
                                                 type="text" 
                                                 value={date}
                                                 onChange={e => setDate(e.target.value)}
@@ -111,7 +111,7 @@ const Homepage = () => {
                                     <div className="group">
                                         <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">{hpText.classLabel || 'Class'}</label>
                                         <div className="bg-surface-container-lowest p-5 rounded-2xl">
-                                            <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-lg cursor-pointer outline-none">
+                                            <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-lg cursor-pointer outline-none text-on-surface">
                                                 <option>All Classes</option>
                                                 <option>AC First Class</option>
                                                 <option>AC 2 Tier</option>
@@ -123,7 +123,7 @@ const Homepage = () => {
                                     <div className="group">
                                         <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">{hpText.quotaLabel || 'Quota'}</label>
                                         <div className="bg-surface-container-lowest p-5 rounded-2xl">
-                                            <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-lg cursor-pointer outline-none">
+                                            <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-lg cursor-pointer outline-none text-on-surface">
                                                 <option>General</option>
                                                 <option>Ladies</option>
                                                 <option>Tatkal</option>
@@ -149,8 +149,8 @@ const Homepage = () => {
                                 </div>
 
                                 {/* CTA */}
-                                <div className="md:col-span-12 mt-4">
-                                    <button onClick={handleSearch} className="w-full kinetic-gradient text-white py-6 rounded-2xl font-black text-xl uppercase tracking-[0.2em] shadow-[0_10px_20px_rgba(163,62,0,0.3)] hover:shadow-[0_15px_30px_rgba(163,62,0,0.4)] transition-all duration-300 active:scale-[0.98]">
+                                <div className="md:col-span-12 mt-2 sm:mt-4">
+                                    <button onClick={handleSearch} className="w-full kinetic-gradient text-white py-4 sm:py-6 rounded-2xl font-black text-base sm:text-xl uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-[0_10px_20px_rgba(163,62,0,0.3)] hover:shadow-[0_15px_30px_rgba(163,62,0,0.4)] transition-all duration-300 active:scale-[0.98]">
                                         {hpText.searchBtn || 'Search Trains'}
                                     </button>
                                 </div>
@@ -159,19 +159,19 @@ const Homepage = () => {
                     </div>
                 </section>
 
-                <section className="max-w-7xl mx-auto px-6 mt-12 space-y-16">
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 space-y-12 sm:space-y-16">
                     {/* Recent Searches */}
                     <div>
-                        <div className="flex items-end gap-3 mb-8">
-                            <h2 className="text-3xl font-black text-on-surface tracking-tight">{hpText.recentSearches || 'Recently searched'}</h2>
+                        <div className="flex items-end gap-3 mb-6 sm:mb-8">
+                            <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight">{hpText.recentSearches || 'Recently searched'}</h2>
                             <div className="h-1 w-12 bg-primary rounded-full mb-2"></div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {homepage.recent_searches.slice(0,3).map((search, idx) => (
                                 <div key={idx} className="group bg-surface-container-lowest p-6 rounded-[1.5rem] border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 cursor-pointer flex justify-between items-center" onClick={() => {setFromStation(search.from_station); setToStation(search.to_station)}}>
                                     <div className="flex flex-col gap-1">
-                                        <span className="text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">{search.date} • {search.class}</span>
-                                        <span className="text-xl font-bold">{search.from_station} <span className="text-primary-container text-xs mx-1">→</span> {search.to_station}</span>
+                                        <span className="text-[10px] sm:text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">{search.date} • {search.class}</span>
+                                        <span className="text-base sm:text-xl font-bold text-on-surface">{search.from_station} <span className="text-primary-container text-xs mx-1">→</span> {search.to_station}</span>
                                     </div>
                                     <span className="material-symbols-outlined text-primary/40 group-hover:translate-x-1 transition-transform">chevron_right</span>
                                 </div>
@@ -183,7 +183,7 @@ const Homepage = () => {
                     <div>
                         <div className="flex justify-between items-end mb-8">
                             <div className="flex items-end gap-3">
-                                <h2 className="text-3xl font-black text-on-surface tracking-tight">{hpText.trendingTitle || 'Trending Routes'}</h2>
+                                <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight">{hpText.trendingTitle || 'Trending Routes'}</h2>
                                 <div className="h-1 w-12 bg-secondary rounded-full mb-2"></div>
                             </div>
                             <button className="text-secondary font-bold hover:underline">{hpText.viewAllBtn || 'View All'}</button>
@@ -216,23 +216,23 @@ const Homepage = () => {
 
                     {/* Festival Specials */}
                     <div>
-                        <div className="flex items-end gap-3 mb-8">
-                            <h2 className="text-3xl font-black text-on-surface tracking-tight">{hpText.quickLinksTitle || 'Quick Links'}</h2>
+                        <div className="flex items-end gap-3 mb-6 sm:mb-8">
+                            <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight">{hpText.quickLinksTitle || 'Quick Links'}</h2>
                             <div className="h-1 w-12 bg-tertiary rounded-full mb-2"></div>
                         </div>
-                        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+                        <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 scrollbar-hide py-2">
                             {homepage.quick_links.map((link, idx) => (
-                                <div key={idx} className="flex-none w-[350px] md:w-[400px] bg-tertiary-container/10 p-8 rounded-[2.5rem] border-2 border-tertiary/10 group cursor-pointer hover:bg-tertiary-container/20 transition-all duration-300">
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div className="p-4 bg-tertiary rounded-2xl text-white">
-                                            <span className="material-symbols-outlined text-3xl">celebration</span>
+                                <div key={idx} className="flex-none w-[240px] sm:w-[280px] md:w-[320px] bg-tertiary-container/10 p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] border-2 border-tertiary/10 group cursor-pointer hover:bg-tertiary-container/20 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+                                    <div className="flex justify-between items-start mb-5">
+                                        <div className="p-3 sm:p-4 bg-tertiary rounded-xl sm:rounded-2xl text-white overflow-hidden relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
+                                            <span className="material-symbols-outlined text-2xl sm:text-3xl absolute group-hover:animate-drive transition-transform duration-300">train</span>
                                         </div>
-                                        <span className="bg-tertiary/20 text-tertiary-container font-black px-4 py-1 rounded-full text-xs uppercase tracking-widest">{link.tag}</span>
+                                        <span className="bg-tertiary/20 text-tertiary-container font-black px-3 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-widest">{link.tag}</span>
                                     </div>
-                                    <h3 className="text-2xl font-black mb-2">{link.title}</h3>
-                                    <div className="flex items-center gap-2 text-tertiary font-bold group-hover:gap-4 transition-all">
+                                    <h3 className="text-lg sm:text-xl font-black mb-2 text-on-surface">{link.title}</h3>
+                                    <div className="flex items-center gap-2 text-tertiary font-bold group-hover:gap-4 transition-all text-sm">
                                         <span>{hpText.exploreNowBtn || 'Explore Now'}</span>
-                                        <span className="material-symbols-outlined">trending_flat</span>
+                                        <span className="material-symbols-outlined text-sm">trending_flat</span>
                                     </div>
                                 </div>
                             ))}
@@ -240,10 +240,10 @@ const Homepage = () => {
                     </div>
 
                     {/* Services Grid */}
-                    <div className="text-center mt-32 mb-16 px-4">
-                        <h2 className="text-4xl font-black text-on-surface tracking-tight mb-2">{hpText.servicesTitle || 'Have you not found the right one?'}</h2>
-                        <p className="text-xl text-on-surface-variant font-bold mb-16">{hpText.servicesSub || 'Find a service suitable for you here.'}</p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-12 gap-x-6 max-w-5xl mx-auto">
+                    <div className="text-center mt-16 sm:mt-32 mb-10 sm:mb-16 px-2 sm:px-4">
+                        <h2 className="text-2xl sm:text-4xl font-black text-on-surface tracking-tight mb-2">{hpText.servicesTitle || 'Have you not found the right one?'}</h2>
+                        <p className="text-base sm:text-xl text-on-surface-variant font-bold mb-10 sm:mb-16">{hpText.servicesSub || 'Find a service suitable for you here.'}</p>
+                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-8 sm:gap-y-12 gap-x-4 sm:gap-x-6 max-w-5xl mx-auto">
                             {[
                                 { icon: 'flight', label: hpText.services?.flights || 'FLIGHTS' },
                                 { icon: 'hotel', label: hpText.services?.hotels || 'HOTELS' },
@@ -257,23 +257,23 @@ const Homepage = () => {
                                 { icon: 'photo_library', label: hpText.services?.gallery || 'GALLERY' }
                             ].map((service, idx) => (
                                 <div key={idx} className="flex flex-col items-center group cursor-pointer">
-                                    <div className="w-[100px] h-[100px] rounded-full border border-outline-variant/50 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm border-[1.5px] group-hover:scale-105">
-                                        <span className="material-symbols-outlined text-[40px] font-light">{service.icon}</span>
+                                    <div className="w-16 h-16 sm:w-[100px] sm:h-[100px] rounded-full border border-outline-variant/50 flex items-center justify-center mb-3 sm:mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm border-[1.5px] group-hover:scale-105">
+                                        <span className="material-symbols-outlined text-[28px] sm:text-[40px] font-light">{service.icon}</span>
                                     </div>
-                                    <span className="text-[13px] font-black tracking-wide uppercase text-on-surface group-hover:text-primary transition-colors">{service.label}</span>
+                                    <span className="text-[10px] sm:text-[13px] font-black tracking-wide uppercase text-on-surface group-hover:text-primary transition-colors">{service.label}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* Holidays */}
-                    <div className="mt-32 mb-24 text-center px-4">
-                        <h2 className="text-4xl font-black text-on-surface tracking-widest mb-16 uppercase">{hpText.holidaysTitle || 'HOLIDAYS'}</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div className="mt-16 sm:mt-32 mb-16 sm:mb-24 text-center px-2 sm:px-4">
+                        <h2 className="text-2xl sm:text-4xl font-black text-on-surface tracking-widest mb-8 sm:mb-16 uppercase">{hpText.holidaysTitle || 'HOLIDAYS'}</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
                             {[
-                                { img: 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366', title: hpText.holidays?.maharajasTitle || "Maharajas' Express", desc: hpText.holidays?.maharajasDesc || "Redefining Royalty, Luxury and Comfort, Maharajas' express takes you on a sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern amenities are amalgamated for an 'Experience Unsurpassed'." },
-                                { img: 'https://images.unsplash.com/photo-1528644465493-27aa3428d087', title: hpText.holidays?.internationalTitle || "International Packages", desc: hpText.holidays?.internationalDesc || "Best deals in International Holiday packages, handpicked by IRCTC, for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA, Australia etc. The packages are inclusive of sightseeing, meals, visa..." },
-                                { img: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2', title: hpText.holidays?.domesticTitle || "Domestic Air Packages", desc: hpText.holidays?.domesticDesc || "Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata Vaishno Devi or the leisure traveller wanting to relish the Blue mountains of North East, Sand-dunes of Rajasthan, Hamlets of Ladakh, Wonders of Himalayas, Serene lakes..." }
+                                { img: '/maharajas_express.png', title: hpText.holidays?.maharajasTitle || "Maharajas' Express", desc: hpText.holidays?.maharajasDesc || "Redefining Royalty, Luxury and Comfort, Maharajas' express takes you on a sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern amenities are amalgamated for an 'Experience Unsurpassed'." },
+                                { img: '/international_packages.png', title: hpText.holidays?.internationalTitle || "International Packages", desc: hpText.holidays?.internationalDesc || "Best deals in International Holiday packages, handpicked by IRCTC, for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA, Australia etc. The packages are inclusive of sightseeing, meals, visa..." },
+                                { img: '/international_packages.png', title: hpText.holidays?.domesticTitle || "Domestic Air Packages", desc: hpText.holidays?.domesticDesc || "Be it the spiritual devotee seeking blessings of Tirupati, Shirdi or Mata Vaishno Devi or the leisure traveller wanting to relish the Blue mountains of North East, Sand-dunes of Rajasthan, Hamlets of Ladakh, Wonders of Himalayas, Serene lakes..." }
                             ].map((pkg, idx) => (
                                 <div key={idx} className="bg-surface-container-lowest group cursor-pointer text-left flex flex-col h-full border border-transparent hover:border-outline-variant/30 hover:shadow-2xl transition-all duration-500">
                                     <div className="overflow-hidden aspect-[4/3]">
@@ -292,10 +292,10 @@ const Homepage = () => {
             </main>
 
             {/* Social Banner */}
-            <div className="bg-gradient-to-r from-[#211b4a] to-[#7f3471] text-white py-4 px-6 mt-12 border-b-2 border-white/10">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
-                    <span className="font-medium text-[16px] tracking-wide">{hpText.socialTitle || 'Get Connected with us on social networks'}</span>
-                    <div className="flex items-center gap-3">
+            <div className="bg-gradient-to-r from-[#211b4a] to-[#7f3471] text-white py-4 px-4 sm:px-6 mt-8 sm:mt-12 border-b-2 border-white/10 w-full overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-10 w-full overflow-hidden">
+                    <span className="font-medium text-sm sm:text-[16px] tracking-wide text-center shrink-0">{hpText.socialTitle || 'Get Connected with us on social networks'}</span>
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center w-full max-w-full">
                         <div className="w-[38px] h-[38px] rounded-full bg-[#3b5998] flex items-center justify-center cursor-pointer shadow-lg hover:opacity-90 transition-opacity"><span className="font-bold text-lg">f</span></div>
                         <div className="w-[38px] h-[38px] rounded-full bg-[#25D366] flex items-center justify-center cursor-pointer shadow-lg hover:opacity-90 transition-opacity">
                             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -313,8 +313,8 @@ const Homepage = () => {
             </div>
 
             {/* Dark Purple Nav Footer */}
-            <footer className="bg-[#18113c] py-16 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+            <footer className="bg-[#18113c] py-10 sm:py-16 px-4 sm:px-6 w-full overflow-hidden">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 w-full">
                     <div>
                         <ul className="space-y-4 font-bold text-white/90 text-sm">
                             <li><a className="hover:text-amber-400 transition-colors flex items-center" href="#">IRCTC Trains <span className="material-symbols-outlined text-sm ml-1">expand_more</span></a></li>

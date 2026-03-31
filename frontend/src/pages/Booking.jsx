@@ -20,9 +20,9 @@ const Booking = () => {
         <div className="bg-surface text-on-surface font-body min-h-screen pb-32">
             <Navbar />
 
-            <main className="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+            <main className="pt-20 sm:pt-24 pb-32 px-4 sm:px-6 max-w-7xl mx-auto">
                 {/* Progress Indicator */}
-                <div className="mb-12">
+                <div className="mb-8 sm:mb-12">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">

@@ -61,11 +61,11 @@ const SearchResults = () => {
         <div className="bg-surface text-on-surface font-body min-h-screen">
             <Navbar />
 
-            <main className="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+            <main className="pt-24 sm:pt-28 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
                 {/* Search Info Banner */}
-                <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="mb-8 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
                     <div>
-                        <h1 className="text-4xl font-black text-on-surface -tracking-widest mb-2 uppercase">{search_criteria.from_station} → {search_criteria.to_station}</h1>
+                        <h1 className="text-2xl sm:text-4xl font-black text-on-surface -tracking-widest mb-2 uppercase">{search_criteria.from_station} → {search_criteria.to_station}</h1>
                         <p className="text-on-surface-variant font-medium">{search_criteria.date} • {search_criteria.passengers.adults < 10 && '0'}{search_criteria.passengers.adults} Adults • {search_criteria.quota}</p>
                     </div>
                     <Link to="/" className="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-primary/20">
@@ -75,7 +75,7 @@ const SearchResults = () => {
                 </div>
 
                 {/* Filter and Sort Header */}
-                <div className="sticky top-24 z-40 bg-surface/90 backdrop-blur-xl py-4 mb-8">
+                <div className="sticky top-20 sm:top-24 z-40 bg-surface/90 backdrop-blur-xl py-3 sm:py-4 mb-6 sm:mb-8">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="flex flex-wrap items-center gap-3">
                             <button onClick={() => setSortBy(sortBy === 'Duration: Fastest First' ? 'Relevance' : 'Duration: Fastest First')} className={`px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest active:scale-95 transition-all ${sortBy === 'Duration: Fastest First' ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest'}`}>{srText.fastest || 'Fastest'}</button>
@@ -104,14 +104,14 @@ const SearchResults = () => {
                     ) : (
                         filteredTrains.map((train, idx) => (
                             <div key={idx} className="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(20,29,30,0.04)] overflow-hidden group hover:shadow-[0_20px_40px_rgba(20,29,30,0.08)] transition-all duration-500 border border-transparent hover:border-outline-variant/10">
-                            <div className="p-8 flex flex-col md:flex-row gap-8 items-stretch">
+                            <div className="p-4 sm:p-8 flex flex-col md:flex-row gap-4 sm:gap-8 items-stretch">
                                 {/* Train Info */}
                                 <div className="flex-1 space-y-6">
                                     <div className="flex items-start justify-between">
                                         <div>
                                             <div className="flex items-center gap-3 mb-1">
                                                 {train.type && <span className="bg-tertiary-container/10 text-tertiary text-[10px] font-black px-2 py-0.5 rounded tracking-tighter uppercase">{train.type}</span>}
-                                                <h3 className="text-xl font-extrabold text-on-surface tracking-tight">{train.train_name} ({train.train_number})</h3>
+                                                <h3 className="text-base sm:text-xl font-extrabold text-on-surface tracking-tight">{train.train_name} ({train.train_number})</h3>
                                             </div>
                                             <div className="flex gap-2">
                                                 <span className="text-[10px] font-bold tracking-widest uppercase bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">LHB Rake</span>
@@ -126,7 +126,7 @@ const SearchResults = () => {
                                     {/* Journey Progress Visualization */}
                                     <div className="flex items-center justify-between relative">
                                         <div className="flex flex-col items-start z-10 bg-surface-container-lowest pr-4">
-                                            <span className="text-2xl font-black text-on-surface">{train.departure.time}</span>
+                                            <span className="text-xl sm:text-2xl font-black text-on-surface">{train.departure.time}</span>
                                             <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">{train.departure.station}</span>
                                         </div>
                                         <div className="flex-1 flex flex-col items-center justify-center px-4 relative">
@@ -139,13 +139,13 @@ const SearchResults = () => {
                                             <span className="text-[10px] font-bold text-tertiary uppercase tracking-widest mt-1">{train.delay_status}</span>
                                         </div>
                                         <div className="flex flex-col items-end z-10 bg-surface-container-lowest pl-4">
-                                            <span className="text-2xl font-black text-on-surface">{train.arrival.time}</span>
+                                            <span className="text-xl sm:text-2xl font-black text-on-surface">{train.arrival.time}</span>
                                             <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">{train.arrival.station}</span>
                                         </div>
                                     </div>
 
                                     {/* Class Selection / Availability */}
-                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 pt-4">
                                         {train.classes.map((c, i) => {
                                             const isAvailable = c.availability.status === "AVL";
                                             const isWL = c.availability.status === "WL";
@@ -167,7 +167,7 @@ const SearchResults = () => {
 
                                 {/* CTA Section */}
                                 <div className="md:w-56 flex flex-col justify-end gap-3 md:border-l md:border-surface-container-low md:pl-8">
-                                    <Link to={`/booking`} className="w-full text-center bg-primary text-on-primary py-4 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all active:scale-95">{srText.bookNow || 'Book Now'}</Link>
+                                    <Link to={`/login`} className="w-full text-center bg-primary text-on-primary py-4 rounded-xl font-black text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all active:scale-95">{srText.bookNow || 'Book Now'}</Link>
                                     <button className="w-full bg-surface-container-highest text-on-surface-variant py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors active:scale-95">{srText.trackStatus || 'Track Status'}</button>
                                 </div>
                             </div>
