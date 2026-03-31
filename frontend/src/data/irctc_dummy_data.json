@@ -1,0 +1,729 @@
+{
+  "homepage": {
+    "user_profile_summary": {
+      "user_name": "Rituraj Jha",
+      "user_id": "RITU938",
+      "saved_passengers_count": 7,
+      "wallet_balance_inr": 12450.00,
+      "kyc_status": "Aadhaar Verified"
+    },
+    "popular_stations": [
+      { "code": "NDLS", "name": "New Delhi", "city": "New Delhi", "state": "Delhi" },
+      { "code": "BCT", "name": "Mumbai Central", "city": "Mumbai", "state": "Maharashtra" },
+      { "code": "ADI", "name": "Ahmedabad Junction", "city": "Ahmedabad", "state": "Gujarat" },
+      { "code": "MAS", "name": "Chennai Central", "city": "Chennai", "state": "Tamil Nadu" },
+      { "code": "HWH", "name": "Howrah Junction", "city": "Kolkata", "state": "West Bengal" },
+      { "code": "SBC", "name": "KSR Bengaluru", "city": "Bengaluru", "state": "Karnataka" },
+      { "code": "HYB", "name": "Hyderabad Deccan", "city": "Hyderabad", "state": "Telangana" },
+      { "code": "PUNE", "name": "Pune Junction", "city": "Pune", "state": "Maharashtra" },
+      { "code": "JP", "name": "Jaipur Junction", "city": "Jaipur", "state": "Rajasthan" },
+      { "code": "LKO", "name": "Lucknow Charbagh", "city": "Lucknow", "state": "Uttar Pradesh" }
+    ],
+    "recent_searches": [
+      { "from_station": "ADI", "to_station": "NDLS", "date": "2026-04-12", "class": "3A", "quota": "GN" },
+      { "from_station": "ADI", "to_station": "BCT", "date": "2026-04-05", "class": "CC", "quota": "GN" },
+      { "from_station": "NDLS", "to_station": "SBC", "date": "2026-04-20", "class": "2A", "quota": "GN" },
+      { "from_station": "ADI", "to_station": "PUNE", "date": "2026-04-01", "class": "SL", "quota": "TQ" }
+    ],
+    "personalized_recommendations": [
+      { "route": "Ahmedabad (ADI) ➔ Mumbai (BCT)", "train_name": "Vande Bharat Express", "train_number": "22210", "date": "2026-04-05", "starting_price": 1150, "trip_type": "Weekend Trip" },
+      { "route": "Ahmedabad (ADI) ➔ New Delhi (NDLS)", "train_name": "Swarna Jayanti Rajdhani", "train_number": "12957", "date": "2026-04-12", "starting_price": 1850, "trip_type": "Upcoming Journey" },
+      { "route": "Ahmedabad (ADI) ➔ Jaipur (JP)", "train_name": "Ashram Express", "train_number": "12915", "date": "2026-04-18", "starting_price": 450, "trip_type": "Business Route" },
+      { "route": "Ahmedabad (ADI) ➔ Pune (PUNE)", "train_name": "Ahimsa Express", "train_number": "11095", "date": "2026-04-22", "starting_price": 520, "trip_type": "Frequent Search" },
+      { "route": "New Delhi (NDLS) ➔ Ahmedabad (ADI)", "train_name": "Gujarat Sampark Kranti", "train_number": "12918", "date": "2026-04-28", "starting_price": 680, "trip_type": "Return Trip" }
+    ],
+    "quick_links": [
+      { "title": "Summer Vacations Special", "tag": "New", "image_placeholder": "https://dummyimage.com/300x200/ff9900/fff&text=Summer+Special", "link": "/summer-specials" },
+      { "title": "Festive Special Trains", "tag": "Offer", "image_placeholder": "https://dummyimage.com/300x200/e91e63/fff&text=Festive+Specials", "link": "/festive" },
+      { "title": "Maharajas' Express Luxury", "tag": "Luxury", "image_placeholder": "https://dummyimage.com/300x200/800000/fff&text=Maharajas+Express", "link": "/luxury" },
+      { "title": "Book Retiring Rooms", "tag": "Utility", "image_placeholder": "https://dummyimage.com/300x200/009688/fff&text=Retiring+Rooms", "link": "/accommodations" },
+      { "title": "Order eCatering", "tag": "Food", "image_placeholder": "https://dummyimage.com/300x200/4caf50/fff&text=IRCTC+eCatering", "link": "/catering" }
+    ],
+    "trending_routes": [
+      { "route": "NDLS ➔ BCT", "avg_price": 1650, "availability_trend": "High Demand" },
+      { "route": "HWH ➔ NDLS", "avg_price": 1500, "availability_trend": "Waitlisted" },
+      { "route": "SBC ➔ MAS", "avg_price": 400, "availability_trend": "Available" },
+      { "route": "ADI ➔ BCT", "avg_price": 600, "availability_trend": "Fast Filling" },
+      { "route": "NDLS ➔ LKO", "avg_price": 550, "availability_trend": "Available" },
+      { "route": "PUNE ➔ CSMT", "avg_price": 180, "availability_trend": "Moderate" }
+    ]
+  },
+  "train_search_form": {
+    "stations_autocomplete": [
+      { "name": "Ahmedabad Junction", "code": "ADI", "city": "Ahmedabad", "state": "Gujarat" },
+      { "name": "Ahmadnagar", "code": "ANG", "city": "Ahmadnagar", "state": "Maharashtra" },
+      { "name": "New Delhi", "code": "NDLS", "city": "New Delhi", "state": "Delhi" },
+      { "name": "Delhi Hazrat Nizamuddin", "code": "NZM", "city": "New Delhi", "state": "Delhi" },
+      { "name": "Delhi Sarai Rohilla", "code": "DEE", "city": "New Delhi", "state": "Delhi" },
+      { "name": "Mumbai Central", "code": "BCT", "city": "Mumbai", "state": "Maharashtra" },
+      { "name": "Bandra Terminus", "code": "BDTS", "city": "Mumbai", "state": "Maharashtra" },
+      { "name": "Agra Cantt", "code": "AGC", "city": "Agra", "state": "Uttar Pradesh" },
+      { "name": "Varanasi Junction", "code": "BSB", "city": "Varanasi", "state": "Uttar Pradesh" },
+      { "name": "KSR Bengaluru", "code": "SBC", "city": "Bengaluru", "state": "Karnataka" },
+      { "name": "Yesvantpur Junction", "code": "YPR", "city": "Bengaluru", "state": "Karnataka" },
+      { "name": "Chennai Central", "code": "MAS", "city": "Chennai", "state": "Tamil Nadu" },
+      { "name": "Chennai Egmore", "code": "MS", "city": "Chennai", "state": "Tamil Nadu" },
+      { "name": "Howrah Junction", "code": "HWH", "city": "Kolkata", "state": "West Bengal" },
+      { "name": "Sealdah", "code": "SDAH", "city": "Kolkata", "state": "West Bengal" },
+      { "name": "Kolkata Chitpur", "code": "KOAA", "city": "Kolkata", "state": "West Bengal" },
+      { "name": "Pune Junction", "code": "PUNE", "city": "Pune", "state": "Maharashtra" },
+      { "name": "Hyderabad Deccan", "code": "HYB", "city": "Hyderabad", "state": "Telangana" },
+      { "name": "Secunderabad", "code": "SC", "city": "Hyderabad", "state": "Telangana" },
+      { "name": "Chandigarh", "code": "CDG", "city": "Chandigarh", "state": "Chandigarh" },
+      { "name": "Jaipur", "code": "JP", "city": "Jaipur", "state": "Rajasthan" },
+      { "name": "Bhubaneswar", "code": "BBS", "city": "Bhubaneswar", "state": "Odisha" },
+      { "name": "Amritsar", "code": "ASR", "city": "Amritsar", "state": "Punjab" },
+      { "name": "Surat", "code": "ST", "city": "Surat", "state": "Gujarat" },
+      { "name": "Vadodara Junction", "code": "BRC", "city": "Vadodara", "state": "Gujarat" }
+    ],
+    "sample_search_inputs": [
+      {
+        "from": { "code": "ADI", "name": "Ahmedabad Junction" },
+        "to": { "code": "NDLS", "name": "New Delhi" },
+        "date": "2026-04-10",
+        "class": "3A",
+        "quota": "General"
+      },
+      {
+        "from": { "code": "BCT", "name": "Mumbai Central" },
+        "to": { "code": "MAS", "name": "Chennai Central" },
+        "date": "2026-04-15",
+        "class": "CC",
+        "quota": "Tatkal"
+      }
+    ]
+  },
+  "search_results_page": {
+    "search_criteria": {
+      "from_station": "ADI",
+      "to_station": "NDLS",
+      "date": "2026-04-12",
+      "passengers": { "adults": 2, "children": 1, "seniors": 0 },
+      "quota": "General"
+    },
+    "sort_options": ["Relevance", "Departure: Early First", "Departure: Late First", "Arrival: Early First", "Duration: Fastest First", "Price: Cheapest First"],
+    "trains": [
+      {
+        "train_number": "12957",
+        "train_name": "Swarna Jayanti Rajdhani Express",
+        "type": "Rajdhani",
+        "departure": { "station": "ADI", "time": "18:30" },
+        "arrival": { "station": "NDLS", "time": "07:30", "day_offset": 1 },
+        "duration": "13h 00m",
+        "running_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "delay_status": "On Time",
+        "classes": [
+          {
+            "class_code": "1A",
+            "availability": {
+              "status": "WL",
+              "number": 2,
+              "color_indicator": "Low",
+              "probability": "85%"
+            },
+            "fare": { "base": 3800, "reservation": 60, "gst": 190, "total": 4500 }
+          },
+          {
+            "class_code": "2A",
+            "availability": {
+              "status": "AVL",
+              "number": 14,
+              "color_indicator": "High"
+            },
+            "fare": { "base": 2800, "reservation": 50, "gst": 145, "total": 3200 }
+          },
+          {
+            "class_code": "3A",
+            "availability": {
+              "status": "WL",
+              "number": 12,
+              "color_indicator": "Moderate",
+              "probability": "92%"
+            },
+            "fare": { "base": 1600, "reservation": 40, "gst": 85, "total": 1850 }
+          }
+        ]
+      },
+      {
+        "train_number": "22452",
+        "train_name": "Ahmedabad NDLS Vande Bharat",
+        "type": "Vande Bharat",
+        "departure": { "station": "ADI", "time": "14:00" },
+        "arrival": { "station": "NDLS", "time": "23:15", "day_offset": 0 },
+        "duration": "09h 15m",
+        "running_days": ["Mon", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "delay_status": "On Time",
+        "classes": [
+          {
+            "class_code": "CC",
+            "availability": {
+              "status": "AVL",
+              "number": 86,
+              "color_indicator": "High"
+            },
+            "fare": { "base": 1200, "reservation": 40, "catering": 350, "gst": 80, "total": 1670 }
+          },
+          {
+            "class_code": "EC",
+            "availability": {
+              "status": "RAC",
+              "number": 5,
+              "color_indicator": "Moderate"
+            },
+            "fare": { "base": 2400, "reservation": 60, "catering": 400, "gst": 145, "total": 3005 }
+          }
+        ]
+      },
+      {
+        "train_number": "12915",
+        "train_name": "Ashram Express",
+        "type": "Superfast",
+        "departure": { "station": "ADI", "time": "19:15" },
+        "arrival": { "station": "NDLS", "time": "10:00", "day_offset": 1 },
+        "duration": "14h 45m",
+        "running_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "delay_status": "Running 15 min late",
+        "classes": [
+          {
+            "class_code": "1A",
+            "availability": { "status": "WL", "number": 1, "color_indicator": "Low", "probability": "90%" },
+            "fare": { "base": 3500, "reservation": 60, "gst": 178, "total": 3738 }
+          },
+          {
+            "class_code": "2A",
+            "availability": { "status": "AVL", "number": 2, "color_indicator": "Moderate" },
+            "fare": { "base": 2040, "reservation": 50, "gst": 105, "total": 2195 }
+          },
+          {
+            "class_code": "3A",
+            "availability": { "status": "RAC", "number": 18, "color_indicator": "Moderate" },
+            "fare": { "base": 1410, "reservation": 40, "gst": 73, "total": 1523 }
+          },
+          {
+            "class_code": "SL",
+            "availability": { "status": "WL", "number": 85, "color_indicator": "Low", "probability": "45%" },
+            "fare": { "base": 535, "reservation": 20, "gst": 0, "total": 555 }
+          }
+        ]
+      },
+      {
+        "train_number": "19031",
+        "train_name": "Yoga Express",
+        "type": "Express",
+        "departure": { "station": "ADI", "time": "10:50" },
+        "arrival": { "station": "NDLS", "time": "04:50", "day_offset": 1 },
+        "duration": "18h 00m",
+        "running_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "delay_status": "On Time",
+        "classes": [
+          {
+            "class_code": "3A",
+            "availability": { "status": "AVL", "number": 42, "color_indicator": "High" },
+            "fare": { "base": 1250, "reservation": 40, "gst": 65, "total": 1355 }
+          },
+          {
+            "class_code": "SL",
+            "availability": { "status": "AVL", "number": 110, "color_indicator": "High" },
+            "fare": { "base": 465, "reservation": 20, "gst": 0, "total": 485 }
+          },
+          {
+            "class_code": "2S",
+            "availability": { "status": "AVL", "number": 250, "color_indicator": "High" },
+            "fare": { "base": 280, "reservation": 15, "gst": 0, "total": 295 }
+          }
+        ]
+      },
+      {
+        "train_number": "12951",
+        "train_name": "Mumbai New Delhi Rajdhani",
+        "type": "Rajdhani",
+        "departure": { "station": "ST", "time": "19:43" },
+        "arrival": { "station": "NDLS", "time": "08:32", "day_offset": 1 },
+        "duration": "12h 49m",
+        "running_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "delay_status": "On Time",
+        "note": "Boarding from Surat (ST)",
+        "classes": [
+          {
+            "class_code": "1A",
+            "availability": { "status": "WL", "number": 5, "color_indicator": "Low", "probability": "60%" },
+            "fare": { "base": 4250, "reservation": 60, "gst": 215, "total": 4525 }
+          },
+          {
+            "class_code": "2A",
+            "availability": { "status": "RAC", "number": 6, "color_indicator": "Moderate" },
+            "fare": { "base": 2900, "reservation": 50, "gst": 148, "total": 3098 }
+          },
+          {
+            "class_code": "3A",
+            "availability": { "status": "WL", "number": 22, "color_indicator": "Low", "probability": "75%" },
+            "fare": { "base": 2100, "reservation": 40, "catering": 250, "gst": 119, "total": 2509 }
+          }
+        ]
+      },
+      {
+        "train_number": "12216",
+        "train_name": "DEE Garibrath",
+        "type": "Garibrath",
+        "departure": { "station": "ADI", "time": "15:30" },
+        "arrival": { "station": "DEE", "time": "07:10", "day_offset": 1 },
+        "duration": "15h 40m",
+        "running_days": ["Tue", "Wed", "Fri", "Sun"],
+        "delay_status": "Running 25 min late",
+        "classes": [
+          {
+            "class_code": "3A",
+            "availability": { "status": "WL", "number": 95, "color_indicator": "Low", "probability": "20%" },
+            "fare": { "base": 850, "reservation": 40, "gst": 45, "total": 935 }
+          }
+        ]
+      },
+      {
+        "train_number": "22957",
+        "train_name": "Gujarat Sampark Kranti",
+        "type": "Superfast",
+        "departure": { "station": "ADI", "time": "17:45" },
+        "arrival": { "station": "NDLS", "time": "10:15", "day_offset": 1 },
+        "duration": "16h 30m",
+        "running_days": ["Mon", "Wed", "Fri"],
+        "delay_status": "On Time",
+        "classes": [
+          {
+            "class_code": "2A",
+            "availability": { "status": "AVL", "number": 14, "color_indicator": "High" },
+            "fare": { "base": 2040, "reservation": 50, "gst": 105, "total": 2195 }
+          },
+          {
+            "class_code": "3A",
+            "availability": { "status": "RAC", "number": 12, "color_indicator": "Moderate" },
+            "fare": { "base": 1410, "reservation": 40, "gst": 73, "total": 1523 }
+          },
+          {
+            "class_code": "SL",
+            "availability": { "status": "WL", "number": 45, "color_indicator": "Low", "probability": "55%" },
+            "fare": { "base": 535, "reservation": 20, "gst": 0, "total": 555 }
+          }
+        ]
+      },
+      {
+        "train_number": "14312",
+        "train_name": "Ala Hazrat Express",
+        "type": "Express",
+        "departure": { "station": "ADI", "time": "21:00" },
+        "arrival": { "station": "NDLS", "time": "14:15", "day_offset": 1 },
+        "duration": "17h 15m",
+        "running_days": ["Mon", "Tue", "Wed", "Sat"],
+        "delay_status": "On Time",
+        "classes": [
+          {
+            "class_code": "3A",
+            "availability": { "status": "AVL", "number": 56, "color_indicator": "High" },
+            "fare": { "base": 1250, "reservation": 40, "gst": 65, "total": 1355 }
+          },
+          {
+            "class_code": "SL",
+            "availability": { "status": "AVL", "number": 145, "color_indicator": "High" },
+            "fare": { "base": 465, "reservation": 20, "gst": 0, "total": 485 }
+          }
+        ]
+      }
+    ]
+  },
+  "passenger_booking_form": {
+    "saved_passengers": [
+      { "id": "P1", "name": "Rituraj Jha", "age": 32, "gender": "Male", "berth_preference": "Lower", "food": "Veg", "id_type": "Aadhaar", "id_number": "XXXX-XXXX-1234" },
+      { "id": "P2", "name": "Priya Jha", "age": 28, "gender": "Female", "berth_preference": "Lower", "food": "Veg", "id_type": "PAN", "id_number": "ABCDE1234F" },
+      { "id": "P3", "name": "Aarav Jha", "age": 8, "gender": "Male", "berth_preference": "No Preference", "food": "Veg", "id_type": "Aadhaar", "id_number": "XXXX-XXXX-5678" },
+      { "id": "P4", "name": "Ramakant Jha", "age": 68, "gender": "Male", "berth_preference": "Lower", "food": "Veg", "id_type": "Aadhaar", "id_number": "XXXX-XXXX-9012" },
+      { "id": "P5", "name": "Sunita Jha", "age": 65, "gender": "Female", "berth_preference": "Lower", "food": "Veg", "id_type": "Voter ID", "id_number": "XYZ9876543" }
+    ],
+    "new_passenger_form": {
+      "examples": [
+        { "name": "Suresh Patel", "age": 45, "gender": "Male", "nationality": "India", "berth": "Upper", "food": "Jain" },
+        { "name": "Geeta Sharma", "age": 66, "gender": "Female", "nationality": "India", "berth": "Lower", "food": "Veg", "concession": "Senior Citizen" },
+        { "name": "Rohan", "age": 7, "gender": "Male", "nationality": "India", "berth": "No Preference", "food": "Non-Veg" }
+      ],
+      "co_passenger_options": {
+        "auto_upgradation": true,
+        "book_only_if_confirm_berths_allotted": true,
+        "book_only_if_all_lower_berths": false,
+        "preferred_coach_id": "B2"
+      },
+      "travel_insurance": {
+        "opt_in": true,
+        "cost_per_passenger": 0.45,
+        "provider": "SBI General Insurance"
+      },
+      "contact_details": {
+        "mobile": "+91 9876543210",
+        "email": "rituraj.jha938@example.com",
+        "destination_address": "C-12, Green Park, New Delhi",
+        "pin_code": "110016"
+      }
+    }
+  },
+  "seat_selection_coach_layout": {
+    "train_details": {
+      "train_number": "12951",
+      "train_name": "Rajdhani Express"
+    },
+    "layouts": [
+      {
+        "coach_class": "3A",
+        "coach_name": "B1",
+        "total_seats": 72,
+        "grid": [
+          { "seat_number": 1, "type": "Lower", "status": "Booked", "color": "Red" },
+          { "seat_number": 2, "type": "Middle", "status": "Available", "color": "Green" },
+          { "seat_number": 3, "type": "Upper", "status": "RAC", "color": "Orange" },
+          { "seat_number": 4, "type": "Lower", "status": "Ladies Quota", "color": "Pink" },
+          { "seat_number": 5, "type": "Middle", "status": "Available", "color": "Green" },
+          { "seat_number": 6, "type": "Upper", "status": "Available", "color": "Green" },
+          { "seat_number": 7, "type": "Side Lower", "status": "PwD Reserved", "color": "Blue" },
+          { "seat_number": 8, "type": "Side Upper", "status": "Booked", "color": "Red" },
+          { "seat_number": 23, "type": "Lower", "status": "Available", "color": "Green" },
+          { "seat_number": 24, "type": "Middle", "status": "Booked", "color": "Red" },
+          { "seat_number": 45, "type": "Upper", "status": "Waitlisted", "wl_number": 3, "color": "Yellow" }
+        ]
+      },
+      {
+        "coach_class": "2A",
+        "coach_name": "A1",
+        "total_seats": 54,
+        "grid": [
+          { "seat_number": 1, "type": "Lower", "status": "Booked", "color": "Red" },
+          { "seat_number": 2, "type": "Upper", "status": "Available", "color": "Green" },
+          { "seat_number": 3, "type": "Lower", "status": "Available", "color": "Green" },
+          { "seat_number": 4, "type": "Upper", "status": "Booked", "color": "Red" },
+          { "seat_number": 5, "type": "Side Lower", "status": "Booked", "color": "Red" },
+          { "seat_number": 6, "type": "Side Upper", "status": "Available", "color": "Green" }
+        ]
+      },
+      {
+        "coach_class": "SL",
+        "coach_name": "S1",
+        "total_seats": 80,
+        "grid": [
+          { "seat_number": 12, "type": "Lower", "status": "Available", "color": "Green" },
+          { "seat_number": 13, "type": "Middle", "status": "Waitlisted", "wl_number": 45, "color": "Yellow" },
+          { "seat_number": 14, "type": "Upper", "status": "Booked", "color": "Red" },
+          { "seat_number": 15, "type": "Side Lower", "status": "RAC", "color": "Orange" },
+          { "seat_number": 16, "type": "Side Upper", "status": "Available", "color": "Green" }
+        ]
+      }
+    ]
+  },
+  "payment_and_review": {
+    "journey_summary": {
+      "from_station": "ADI",
+      "to_station": "NDLS",
+      "date": "2026-04-12",
+      "train_number": "12957",
+      "class": "3A",
+      "passenger_count": 3
+    },
+    "fare_breakdown": {
+      "base_fare": 4800,
+      "reservation_charge": 120,
+      "superfast_charge": 135,
+      "tatkal_charge": 0,
+      "catering_charge": 750,
+      "gst": 255,
+      "insurance": 1.35,
+      "convenience_fee": 30,
+      "total_amount": 6091.35
+    },
+    "payment_options": [
+      {
+        "method": "IRCTC e-Wallet",
+        "available_balance": 8500.00,
+        "status": "Sufficient Balance",
+        "is_default": true
+      },
+      {
+        "method": "UPI",
+        "apps": ["PhonePe", "Google Pay", "Paytm", "BHIM"],
+        "promotions": ["Get ₹150 cashback on UPI via Google Pay"]
+      },
+      {
+        "method": "Credit / Debit Cards",
+        "saved_cards": [
+          { "network": "Visa", "last4": "4521", "bank": "HDFC Bank" },
+          { "network": "RuPay", "last4": "8901", "bank": "SBI" }
+        ],
+        "promotions": ["5% Reward points on IRCTC SBI Card Premium"]
+      },
+      {
+        "method": "Net Banking",
+        "banks": ["SBI", "HDFC", "ICICI", "Axis Bank", "Kotak"]
+      }
+    ],
+    "resume_booking_scenario": {
+      "has_failed_transaction": true,
+      "failed_transaction": {
+        "transaction_id": "TXN9876523145",
+        "amount": 5620.00,
+        "date": "2026-03-31T20:15:00Z",
+        "status": "Payment Failed - Amount Deducted",
+        "action": "Retry Booking without repayment (subject to settlement)"
+      }
+    }
+  },
+  "my_bookings": {
+    "upcoming_trips": [
+      {
+        "pnr": "6123456789",
+        "train_number": "12957",
+        "train_name": "SJ Rajdhani Exp",
+        "date": "2026-04-12",
+        "from": "ADI",
+        "to": "NDLS",
+        "departure_time": "18:30",
+        "arrival_time": "07:30",
+        "passengers_count": 3,
+        "passenger_names": ["Rituraj Jha", "Priya Jha", "Aarav Jha"],
+        "status": "CNF",
+        "seat_details": "B1 - 23(LB), 24(MB), 25(UB)",
+        "has_insurance": true,
+        "quota": "GN",
+        "qr_code_placeholder": "https://dummyimage.com/150x150/000/fff&text=QR+Code+6123456789"
+      },
+      {
+        "pnr": "4155689230",
+        "train_number": "12918",
+        "train_name": "Gujrat S Kranti",
+        "date": "2026-04-18",
+        "from": "NDLS",
+        "to": "ADI",
+        "departure_time": "13:25",
+        "arrival_time": "03:20",
+        "passengers_count": 1,
+        "passenger_names": ["Rituraj Jha"],
+        "status": "WL 5",
+        "seat_details": "Unassigned",
+        "has_insurance": false,
+        "quota": "TQ",
+        "booking_type": "Tatkal",
+        "qr_code_placeholder": "https://dummyimage.com/150x150/000/fff&text=QR+Code+4155689230"
+      }
+    ],
+    "past_trips": [
+      {
+        "pnr": "2187654390",
+        "train_number": "22953",
+        "train_name": "Gujarat Express",
+        "date": "2026-03-10",
+        "from": "BCT",
+        "to": "ADI",
+        "departure_time": "05:40",
+        "arrival_time": "14:30",
+        "passengers_count": 2,
+        "passenger_names": ["Rituraj Jha", "Ramesh Patel"],
+        "status": "Completed",
+        "seat_details": "D2 - 45(Window), 46(Aisle)",
+        "qr_code_placeholder": "Expired"
+      },
+      {
+        "pnr": "8432109876",
+        "train_number": "12951",
+        "train_name": "Mumbai Rajdhani",
+        "date": "2026-01-22",
+        "from": "ST",
+        "to": "NDLS",
+        "departure_time": "19:43",
+        "arrival_time": "08:32",
+        "passengers_count": 1,
+        "passenger_names": ["Rituraj Jha"],
+        "status": "Cancelled",
+        "seat_details": "-",
+        "qr_code_placeholder": "Invalid"
+      },
+      {
+        "pnr": "4690871235",
+        "train_number": "19215",
+        "train_name": "Saurashtra Exp",
+        "date": "2025-11-05",
+        "from": "ADI",
+        "to": "WKR",
+        "departure_time": "20:20",
+        "arrival_time": "00:45",
+        "passengers_count": 1,
+        "passenger_names": ["Rituraj Jha"],
+        "status": "Completed",
+        "seat_details": "S4 - 12(LB)",
+        "qr_code_placeholder": "Expired"
+      },
+      {
+        "pnr": "6120984573",
+        "train_number": "12901",
+        "train_name": "Gujarat Mail",
+        "date": "2025-08-14",
+        "from": "BCT",
+        "to": "ADI",
+        "departure_time": "21:40",
+        "arrival_time": "05:50",
+        "passengers_count": 4,
+        "passenger_names": ["Rituraj Jha", "Anil Kumar", "Priya Sharma", "Sunita Verma"],
+        "status": "Completed",
+        "seat_details": "A1 - 1, 2, 3, 4",
+        "qr_code_placeholder": "Expired"
+      },
+      {
+        "pnr": "8412039845",
+        "train_number": "12267",
+        "train_name": "Rajkot Duronto",
+        "date": "2025-05-10",
+        "from": "BCT",
+        "to": "RJT",
+        "departure_time": "23:10",
+        "arrival_time": "10:50",
+        "passengers_count": 1,
+        "passenger_names": ["Rituraj Jha"],
+        "status": "Completed",
+        "seat_details": "H1 - A(LB)",
+        "qr_code_placeholder": "Expired"
+      },
+      {
+        "pnr": "2345098127",
+        "train_number": "12009",
+        "train_name": "Shatabdi Exp",
+        "date": "2025-02-18",
+        "from": "BCT",
+        "to": "ADI",
+        "departure_time": "06:20",
+        "arrival_time": "12:40",
+        "passengers_count": 1,
+        "passenger_names": ["Rituraj Jha"],
+        "status": "Completed",
+        "seat_details": "C4 - 55(Window)",
+        "qr_code_placeholder": "Expired"
+      }
+    ]
+  },
+  "pnr_and_live_status": {
+    "sample_pnrs": [
+      {
+        "pnr_number": "6123456789",
+        "train_number": "12951",
+        "train_name": "Rajdhani Express",
+        "date": "2026-03-31",
+        "chart_prepared": true,
+        "current_status": "Confirmed",
+        "passengers": [
+          { "id": 1, "booking_status": "CNF", "current_status": "CNF / B1 / 23", "coach": "B1", "berth": "23", "type": "LB" },
+          { "id": 2, "booking_status": "CNF", "current_status": "CNF / B1 / 24", "coach": "B1", "berth": "24", "type": "MB" }
+        ],
+        "live_running_status": "Running 25 min late, crossed Surat at 14:35"
+      },
+      {
+        "pnr_number": "8765432109",
+        "train_number": "12915",
+        "train_name": "Ashram Express",
+        "date": "2026-04-05",
+        "chart_prepared": false,
+        "current_status": "RAC",
+        "passengers": [
+          { "id": 1, "booking_status": "WL 14", "current_status": "RAC 3", "coach": "Unassigned", "berth": "Unassigned" }
+        ],
+        "live_running_status": "Train yet to start from source."
+      },
+      {
+        "pnr_number": "4125896320",
+        "train_number": "22452",
+        "train_name": "Vande Bharat Exp",
+        "date": "2026-04-02",
+        "chart_prepared": false,
+        "current_status": "Waitlisted",
+        "passengers": [
+          { "id": 1, "booking_status": "WL 45", "current_status": "WL 12", "coach": "Unassigned", "berth": "Unassigned" },
+          { "id": 2, "booking_status": "WL 46", "current_status": "WL 13", "coach": "Unassigned", "berth": "Unassigned" }
+        ],
+        "live_running_status": "Train yet to start from source."
+      },
+      {
+        "pnr_number": "9081726354",
+        "train_number": "12957",
+        "train_name": "SJ Rajdhani Exp",
+        "date": "2026-03-30",
+        "chart_prepared": true,
+        "current_status": "Completed",
+        "passengers": [
+          { "id": 1, "booking_status": "CNF", "current_status": "CNF / A2 / 12", "coach": "A2", "berth": "12", "type": "LB" }
+        ],
+        "live_running_status": "Reached destination New Delhi at 07:35 (5 min late)."
+      }
+    ]
+  },
+  "ask_disha_chatbot": {
+    "conversations": [
+      {
+        "user_input": "Book ticket from ADI to NDLS tomorrow",
+        "bot_response": "Sure! Checking ticket availability from Ahmedabad Junction (ADI) to New Delhi (NDLS) for 01 April 2026. Would you like me to check Tatkal quota as well?"
+      },
+      {
+        "user_input": "Check PNR 6123456789",
+        "bot_response": "Here is the status for PNR 6123456789 (12951 Rajdhani Express). Passenger 1: Confirmed (B1, Seat 23). Passenger 2: Confirmed (B1, Seat 24). Chart is prepared. The train is currently running 25 min late."
+      },
+      {
+        "user_input": "Refund status for PNR 8432109876",
+        "bot_response": "The ticket for PNR 8432109876 was cancelled on 20 Jan 2026. A refund amount of ₹1,420 was successfully credited to your original payment method (HDFC Bank Credit Card ending in 4521) on 22 Jan 2026."
+      },
+      {
+        "user_input": "Order food for tomorrow's journey",
+        "bot_response": "I can help with that. You have an upcoming journey from ADI to NDLS on 01 April 2026 (PNR: 6123456789). Which station would you like the food delivered at? Popular choices are Abu Road or Jaipur."
+      },
+      {
+        "user_input": "Change boarding point to Vadodara",
+        "bot_response": "Please enter your 10-digit PNR number to change the boarding station to Vadodara Junction (BRC)."
+      }
+    ],
+    "push_notifications": [
+      { "id": "N1", "title": "Live Status Update 🚆", "body": "Your train 12951 Rajdhani Express is running 10 min late. Expected arrival at next station (Surat) is 14:45.", "timestamp": "2026-03-31T14:20:00Z" },
+      { "id": "N2", "title": "Tatkal Window Opens Soon ⏰", "body": "Tatkal booking window for your search ADI to NDLS (3A class) opens in 2 hours at 10:00 AM. Keep your payment ready!", "timestamp": "2026-03-31T08:00:00Z" },
+      { "id": "N3", "title": "Chart Prepared 📄", "body": "Chart for PNR 6123456789 has been prepared. Your berths are Confirmed: B1-23, B1-24. Have a safe journey!", "timestamp": "2026-03-31T14:00:00Z" },
+      { "id": "N4", "title": "Cashback Received 💰", "body": "₹150 cashback applied to your IRCTC e-Wallet from your previous UPI transaction.", "timestamp": "2026-03-30T10:15:00Z" }
+    ]
+  },
+  "mobile_app_specific": {
+    "bottom_navigation": [
+      { "id": "nav_home", "icon": "home_fill", "label": "Home", "is_active": true },
+      { "id": "nav_my_bookings", "icon": "ticket", "label": "My Trips", "badge": "2" },
+      { "id": "nav_pnr", "icon": "search_document", "label": "PNR Status" },
+      { "id": "nav_wallet", "icon": "wallet", "label": "e-Wallet", "badge": "₹" },
+      { "id": "nav_profile", "icon": "user_profile", "label": "Account" }
+    ],
+    "home_quick_actions": [
+      { "icon": "train_ticket", "label": "Train Tickets" },
+      { "icon": "flight_takeoff", "label": "Flight" },
+      { "icon": "bus", "label": "Bus" },
+      { "icon": "hotel", "label": "Hotels" },
+      { "icon": "meal", "label": "Food Tracking" },
+      { "icon": "retiring_room", "label": "Rooms" },
+      { "icon": "tourism", "label": "Tour Packages" },
+      { "icon": "drishti", "label": "Ask Disha" }
+    ],
+    "horizontal_date_picker": [
+      { "date": "2026-04-10", "day": "Fri", "status": "WL", "color": "orange" },
+      { "date": "2026-04-11", "day": "Sat", "status": "WL", "color": "red" },
+      { "date": "2026-04-12", "day": "Sun", "status": "RAC", "color": "yellow", "is_selected": true },
+      { "date": "2026-04-13", "day": "Mon", "status": "AVL", "color": "green" },
+      { "date": "2026-04-14", "day": "Tue", "status": "AVL", "color": "green" },
+      { "date": "2026-04-15", "day": "Wed", "status": "AVL", "color": "green" }
+    ],
+    "compact_train_card_template": {
+      "train_header": "12957 - SJ Rajdhani Exp (Rajdhani)",
+      "time_route": "18:30 ADI ➔ 13h 00m ➔ 07:30 NDLS",
+      "fastest_tag": true,
+      "available_classes_pills": [
+        { "class": "1A", "status": "WL 2", "color_mode": "low-availability" },
+        { "class": "2A", "status": "AVL 14", "color_mode": "high-availability" },
+        { "class": "3A", "status": "WL 12", "color_mode": "med-availability" }
+      ]
+    },
+    "system_messages": {
+      "biometric_login_success": "Authentication Successful. Welcome back, Rituraj!",
+      "session_expiry_warning": "Your session will expire in 2 minutes. Do you want to continue?",
+      "offline_mode": "You are currently offline. Showing cached tickets."
+    }
+  }
+}

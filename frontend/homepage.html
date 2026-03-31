@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IRCTC – Seamless Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#ff6600",
+              "surface": "#f2fbfc",
+              "inverse-surface": "#293233",
+              "on-surface": "#141d1e",
+              "on-tertiary-fixed": "#00210b",
+              "surface-variant": "#dbe4e5",
+              "inverse-primary": "#ffb596",
+              "secondary": "#3959b0",
+              "primary": "#a33e00",
+              "secondary-fixed": "#dbe1ff",
+              "on-primary-container": "#561d00",
+              "on-tertiary-container": "#003817",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#141d1e",
+              "background": "#f2fbfc",
+              "primary-fixed-dim": "#ffb596",
+              "tertiary": "#006d33",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#ffdbcd",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#5a4136",
+              "tertiary-fixed": "#78fc9c",
+              "on-error": "#ffffff",
+              "outline-variant": "#e3bfb1",
+              "on-tertiary-fixed-variant": "#005225",
+              "surface-container-highest": "#dbe4e5",
+              "outline": "#8e7164",
+              "on-primary-fixed-variant": "#7c2e00",
+              "surface-container-low": "#ecf5f6",
+              "secondary-fixed-dim": "#b4c5ff",
+              "on-secondary-fixed": "#00174b",
+              "surface-container": "#e6f0f1",
+              "secondary-container": "#84a2fe",
+              "on-error-container": "#93000a",
+              "surface-dim": "#d2dcdd",
+              "on-secondary-fixed-variant": "#1c4197",
+              "surface-container-high": "#e0eaeb",
+              "tertiary-fixed-dim": "#5adf82",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f2fbfc",
+              "tertiary-container": "#17ad57",
+              "on-secondary-container": "#09348b",
+              "surface-tint": "#a33e00",
+              "on-primary-fixed": "#360f00",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#e9f3f3"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #a33e00 0%, #ff6600 100%);
+        }
+        .recessed-input {
+            box-shadow: inset 0 2px 4px rgba(20, 29, 30, 0.04);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#f2fbfc]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(20,29,30,0.06)]">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-black text-[#141d1e] -tracking-wider font-headline">IRCTC</span>
+<span class="h-4 w-[1px] bg-outline-variant/30 hidden md:block"></span>
+<span class="text-xs font-bold tracking-tighter text-on-surface-variant hidden md:block leading-none uppercase">Seamless<br/>Journey</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-semibold tracking-tight text-[#a33e00] border-b-2 border-[#ff6600] pb-1" href="#">Book Ticket</a>
+<a class="font-semibold tracking-tight text-[#5a4136] hover:text-[#a33e00] transition-colors duration-300" href="#">My Trips</a>
+<a class="font-semibold tracking-tight text-[#5a4136] hover:text-[#a33e00] transition-colors duration-300" href="#">PNR Status</a>
+<a class="font-semibold tracking-tight text-[#5a4136] hover:text-[#a33e00] transition-colors duration-300" href="#">Services</a>
+<a class="font-semibold tracking-tight text-[#5a4136] hover:text-[#a33e00] transition-colors duration-300" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#ecf5f6] rounded-full transition-colors duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="p-2 hover:bg-[#ecf5f6] rounded-full transition-colors duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="p-2 hover:bg-[#ecf5f6] rounded-full transition-colors duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="relative px-6 py-12 md:py-20 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-5">
+<div class="w-full h-full bg-[radial-gradient(circle_at_50%_50%,#ff6600_0%,transparent_70%)]"></div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10 text-center mb-16">
+<h1 class="text-5xl md:text-7xl font-black text-on-surface -tracking-[0.03em] mb-6 leading-tight">
+                Where will your <br/><span class="text-primary italic font-serif">Journey</span> begin?
+            </h1>
+<p class="text-on-surface-variant max-w-xl mx-auto text-lg md:text-xl font-medium opacity-80">
+                Premium rail experiences curated for the modern traveller. Fast, seamless, and unmistakably Indian.
+            </p>
+</div>
+<!-- Search Card Bento-style -->
+<div class="max-w-5xl mx-auto">
+<div class="bg-surface-container-low rounded-[2rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(20,29,30,0.06)] relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+<!-- From/To -->
+<div class="md:col-span-5 flex items-center gap-4 relative">
+<div class="flex-1 group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1">From</label>
+<div class="bg-surface-container-lowest p-5 rounded-2xl transition-all duration-300 group-focus-within:ring-2 group-focus-within:ring-primary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60" data-icon="location_on">location_on</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl placeholder:text-on-surface-variant/40" placeholder="Departure City" type="text" value="New Delhi (NDLS)"/>
+</div>
+</div>
+</div>
+<button class="z-20 -mx-4 p-3 bg-surface-container-lowest rounded-full shadow-lg text-primary hover:rotate-180 transition-all duration-500 active:scale-90 border-4 border-surface-container-low">
+<span class="material-symbols-outlined text-2xl leading-none" data-icon="swap_horiz">swap_horiz</span>
+</button>
+<div class="flex-1 group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-right">To</label>
+<div class="bg-surface-container-lowest p-5 rounded-2xl transition-all duration-300 group-focus-within:ring-2 group-focus-within:ring-primary/20">
+<div class="flex items-center gap-3 justify-end text-right">
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl text-right placeholder:text-on-surface-variant/40" placeholder="Arrival City" type="text" value="Mumbai Central (MMCT)"/>
+<span class="material-symbols-outlined text-primary/60" data-icon="near_me">near_me</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Date -->
+<div class="md:col-span-3 group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1">Date</label>
+<div class="bg-surface-container-lowest p-5 rounded-2xl transition-all duration-300 group-focus-within:ring-2 group-focus-within:ring-primary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary/60" data-icon="calendar_today">calendar_today</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-xl" type="text" value="24 Oct, 2023"/>
+</div>
+</div>
+</div>
+<!-- Class & Quota -->
+<div class="md:col-span-4 grid grid-cols-2 gap-4">
+<div class="group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">Class</label>
+<div class="bg-surface-container-lowest p-5 rounded-2xl">
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-lg cursor-pointer">
+<option>All Classes</option>
+<option>AC First Class</option>
+<option>AC 2 Tier</option>
+</select>
+</div>
+</div>
+<div class="group">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">Quota</label>
+<div class="bg-surface-container-lowest p-5 rounded-2xl">
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-lg cursor-pointer">
+<option>General</option>
+<option>Ladies</option>
+<option>Tatkal</option>
+</select>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="md:col-span-12 mt-4">
+<button class="w-full kinetic-gradient text-white py-6 rounded-2xl font-black text-xl uppercase tracking-[0.2em] shadow-[0_10px_20px_rgba(163,62,0,0.3)] hover:shadow-[0_15px_30px_rgba(163,62,0,0.4)] transition-all duration-300 active:scale-[0.98]">
+                            Search Trains
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Horizontal Sections -->
+<section class="max-w-7xl mx-auto px-6 mt-12 space-y-16">
+<!-- Recent Searches -->
+<div>
+<div class="flex items-end gap-3 mb-8">
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Recently searched</h2>
+<div class="h-1 w-12 bg-primary rounded-full mb-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 cursor-pointer flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">Last Week</span>
+<span class="text-xl font-bold">Delhi <span class="text-primary-container text-xs mx-1">→</span> Agra</span>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 cursor-pointer flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">Yesterday</span>
+<span class="text-xl font-bold">Mumbai <span class="text-primary-container text-xs mx-1">→</span> Goa</span>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="group bg-surface-container-lowest p-6 rounded-[1.5rem] border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 cursor-pointer flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant/60">2 days ago</span>
+<span class="text-xl font-bold">Pune <span class="text-primary-container text-xs mx-1">→</span> Bengaluru</span>
+</div>
+<span class="material-symbols-outlined text-primary/40 group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Recommended for You -->
+<div>
+<div class="flex justify-between items-end mb-8">
+<div class="flex items-end gap-3">
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Recommended for you</h2>
+<div class="h-1 w-12 bg-secondary rounded-full mb-2"></div>
+</div>
+<button class="text-secondary font-bold hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Stunning architectural view of the Taj Mahal in Agra with soft morning light and clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClVVDBCOnWjfG9A9XWOgpuq585mDY8RAbdNJBKgDiqfViaQFLVzNOvPKXtrnnjvClyW5Mi36WtIaijlkMywYQd6BaxRrY3jbP31d8mBxG4f3l-edUkIJf4IWMe3WNK2lzj_DBRpjqSQs-quVOc_EvkT0N3YZw9C5nAfKwclSKeSeH-muzYFpNWT94Afe74_ZYaXcxgBdwdLS6BFaspUCN0bzXNLZTFYOzQILC8plIZBIoOKxvZ4VIlyi8G3IvOLFwVaamlJwN-iU4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-bold mb-1">Agra</h3>
+<p class="text-sm text-white/70">The Heritage Route</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Hawa Mahal in Jaipur at sunset with vibrant pink sandstone glowing under warm orange light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2nWmFwG-xfDQ7y7KRC4aQ12DlzdQfzkMdUsPKsSDKq7hoPSU0p-7U7hpfs3TpV0xYvCgmcO4mJHynz8gKN3e39paF4lII198PPMg4RkW0hICDHG-zpDHoinZ4p59dAqqB2pG4ZNhpYeYgYao6jakpcZMEeOk4hdHh1v2HQdNXEMRDHoTk4KvjY33S-kCKNgCsgBPAcdpFXT4OB3AAU2j9Km14BITdB8MV-31RZk5mlWJlMXwGNpFXkq68dm8iHLF0zTD0Gr4qhHU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-bold mb-1">Jaipur</h3>
+<p class="text-sm text-white/70">Royal Escapades</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern skyline of Mumbai's Marine Drive at twilight with city lights reflecting on the Arabian Sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6WIXhu66o3memTHIB9nitkOXsFdDQaRJM29oCdND5DyB6FmarezPXo_AMWodHtdbzvhiaK-RNDvgsB-tVOBxA0FaCBiaJXC95Ycr-NRugeDs8TgGyjWenJd-rqayzr5pSC0aN8BxN58Ys-ZRsCS5Mdo7v_e6BV6sbDi_5pZK4Sz0cw6hOQy1uX015qNnzmWpTIdanVlYX-Y_FS1WlDeNz-D47S8Z2tlnszPXAH4ylcRRf3bw4zmeMjhQmQ63C0yukSvn0s2IpO0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-bold mb-1">Mumbai</h3>
+<p class="text-sm text-white/70">The Coastal Pulse</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Serene backwaters of Kerala with a traditional houseboat slowly moving through calm water at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcb6YlvvyJPghikZHDq5rze7d3yftOT5MuFrcbmqgUKyK3UZmwWjZLRkjTMefTGgevKlt5ArJ5NhhO0EZYqmNgh29D4LXB-tX17006bBNtxtWIQNw8lVewNDFkOIfkUC_QjyTZnikFAKn7Jlt00r23JiUNfZ9qCK7ixDUvxn2VX9kTmZQSK4gcq5uJWFAmhGv1D4Gc8dT2N2wDffHjnC_Dg0L_luWiQtK0029S2O3kgb_zPiY5apHAQVL-ORVxVppOzN0KkLAFEjk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-2xl font-bold mb-1">Kochi</h3>
+<p class="text-sm text-white/70">Tropical Serenity</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Festival Specials -->
+<div>
+<div class="flex items-end gap-3 mb-8">
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Festival Specials</h2>
+<div class="h-1 w-12 bg-tertiary rounded-full mb-2"></div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+<div class="flex-none w-[400px] bg-tertiary-container/10 p-8 rounded-[2.5rem] border-2 border-tertiary/10 group cursor-pointer hover:bg-tertiary-container/20 transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-4 bg-tertiary rounded-2xl text-white">
+<span class="material-symbols-outlined text-3xl" data-icon="celebration">celebration</span>
+</div>
+<span class="bg-tertiary/20 text-tertiary-container font-black px-4 py-1 rounded-full text-xs uppercase tracking-widest">Active Now</span>
+</div>
+<h3 class="text-2xl font-black mb-2">Diwali Express</h3>
+<p class="text-on-surface-variant font-medium opacity-70 mb-6">Additional 240 coaches added to the Northern Route for the festive season.</p>
+<div class="flex items-center gap-2 text-tertiary font-bold group-hover:gap-4 transition-all">
+<span>Book Special Ticket</span>
+<span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</div>
+</div>
+<div class="flex-none w-[400px] bg-secondary-container/10 p-8 rounded-[2.5rem] border-2 border-secondary/10 group cursor-pointer hover:bg-secondary-container/20 transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-4 bg-secondary rounded-2xl text-white">
+<span class="material-symbols-outlined text-3xl" data-icon="festival">festival</span>
+</div>
+<span class="bg-secondary/20 text-secondary-container font-black px-4 py-1 rounded-full text-xs uppercase tracking-widest">Coming Soon</span>
+</div>
+<h3 class="text-2xl font-black mb-2">Chhath Puja Special</h3>
+<p class="text-on-surface-variant font-medium opacity-70 mb-6">Confirmed seating guarantee for all East-bound premium trains.</p>
+<div class="flex items-center gap-2 text-secondary font-bold group-hover:gap-4 transition-all">
+<span>Get Notified</span>
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating AskDISHA icon (Consistent Placement: Bottom Right) -->
+<div class="fixed bottom-10 right-10 z-[60] md:bottom-10 md:right-10">
+<button class="relative group">
+<div class="absolute -inset-2 kinetic-gradient rounded-full blur opacity-40 group-hover:opacity-80 transition-opacity"></div>
+<div class="relative bg-white p-4 rounded-full shadow-xl flex items-center gap-3 border border-primary/10">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-white overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a friendly customer service AI avatar with a subtle digital glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9EoobwgU5o7aUY4FyRpI2dT4ud5yRwRAlBJgljab4hhD8YLGvgzfF9u_EQTkV1WaS13rz8CryIHqx81kzG39-hGhJp812gwvp5XqV5U-RSzOzoQk6Rw22SQ2Xaywd8j8eqnkV7o9Ypnyf6I_ncKk8-2twVdKh51pKzpWO_UuQjGvHN-AArGCO8y37aPY6C61i0vgSp_ajQABv8EvBmjkkNc3JfxD_O2x4limQMWbqiTZE-GabauCaCCw9y9dA8dIaiUCjbE_W2ro"/>
+</div>
+<div class="pr-4 hidden sm:block">
+<p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant opacity-50 leading-none mb-1">AskDISHA 2.0</p>
+<p class="text-sm font-bold text-on-surface">How can I help?</p>
+</div>
+</div>
+</button>
+</div>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 backdrop-blur-xl shadow-[0_-10px_30px_rgba(20,29,30,0.08)] rounded-t-3xl z-50">
+<div class="flex flex-col items-center justify-center bg-[#ff6600]/10 text-[#a33e00] rounded-2xl px-6 py-2">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[11px] font-bold font-['Inter'] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a4136]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[11px] font-bold font-['Inter'] uppercase tracking-widest mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a4136]">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-[11px] font-bold font-['Inter'] uppercase tracking-widest mt-1">Trips</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5a4136]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-bold font-['Inter'] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+<footer class="bg-surface-container-low mt-24 py-16 px-6 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-sm">
+<span class="text-2xl font-black text-on-surface -tracking-wider font-headline block mb-4">IRCTC</span>
+<p class="text-on-surface-variant font-medium leading-relaxed opacity-70">
+                A collaborative initiative between IRCTC and IRCTC Systems to redefine the Indian travel landscape with cutting-edge technology and heritage hospitality.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="font-black text-xs uppercase tracking-[0.2em] mb-6 text-primary">Company</h4>
+<ul class="space-y-4 font-bold text-on-surface-variant/80">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Newsroom</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-xs uppercase tracking-[0.2em] mb-6 text-primary">Explore</h4>
+<ul class="space-y-4 font-bold text-on-surface-variant/80">
+<li><a class="hover:text-primary transition-colors" href="#">Luxury Trains</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sovereign Routes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cargo Systems</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-xs uppercase tracking-[0.2em] mb-6 text-primary">Support</h4>
+<ul class="space-y-4 font-bold text-on-surface-variant/80">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Safety Hub</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs font-bold text-on-surface-variant/40 uppercase tracking-widest">© 2023 IRCTC Corporation Ltd. All Rights Reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant/40 cursor-pointer hover:text-primary" data-icon="share">share</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 cursor-pointer hover:text-primary" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 cursor-pointer hover:text-primary" data-icon="policy">policy</span>
+</div>
+</div>
+</footer>
+</body></html>
