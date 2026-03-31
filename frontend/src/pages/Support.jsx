@@ -128,7 +128,7 @@ const Support = () => {
                         playsInline
                         onLoadedData={() => setVideoLoaded(true)}
                     >
-                        <source src="/contact_bg.mp4" type="video/mp4" />
+                        <source src="https://res.cloudinary.com/dmkspibfj/video/upload/v1774996934/14607476_1440_2560_60fps_bsr1oh.mp4" type="video/mp4" />
                     </video>
                     {/* Animated gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"></div>
