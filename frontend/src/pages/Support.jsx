@@ -3,87 +3,16 @@ import Navbar from '../components/Navbar';
 import ChatWidget from '../components/ChatWidget';
 import { useLanguage } from '../context/LanguageContext';
 
-const translations = {
-    en: {
-        title: "Help & Support",
-        subtitle: "24/7 Premium customer resolution center. Reach out to us via call, chat, or designated email branches.",
-        speakAgent: "Speak to an Agent",
-        speakDesc: "Call our dedicated premium support line anytime, 24/7.",
-        emailSupport: "Email Support",
-        emailDesc: "For document submissions, partnership queries, and escalations.",
-        whatsapp: "WhatsApp Support",
-        whatsappDesc: "Chat with us instantly on WhatsApp for quick resolutions.",
-        twitter: "Social Media",
-        twitterDesc: "Reach us on Twitter/X @IRCTCofficial for real-time updates.",
-        chatTitle: "IRCTC Digital Assistant Disha",
-        chatPlaceholder: "Type your query here...",
-        send: "Send",
-        botGreeting: "Welcome to IRCTC Support. I am Disha. How can I assist you today?",
-        quickReplies: ["Book Ticket", "Check PNR Status", "Cancel Ticket", "Refund Status"],
-        openChatPrompt: "Need help? Click here to chat with Disha",
-        faqTitle: "Frequently Asked Questions",
-        officeTitle: "Regional Offices",
-        defaultReplies: [
-            "We are experiencing high passenger volume on some routes. Please ensure you carry valid ID proof during travel.",
-            "For account access issues, please verify your registered email ID.",
-            "You can cancel your ticket from the 'My Trips' section.",
-            "Please call +91 139 for immediate assistance regarding your train schedule."
-        ]
-    },
-    hi: {
-        title: "मदद और सहायता",
-        subtitle: "24/7 प्रीमियम ग्राहक समाधान केंद्र। कॉल, चैट या ईमेल के माध्यम से हमसे संपर्क करें।",
-        speakAgent: "एजेंट से बात करें",
-        speakDesc: "किसी भी समय हमारी समर्पित प्रीमियम सपोर्ट लाइन पर कॉल करें।",
-        emailSupport: "ईमेल सहायता",
-        emailDesc: "दस्तावेज़ जमा करने, साझेदारी के प्रश्नों और मामलों के लिए।",
-        whatsapp: "व्हाट्सएप सहायता",
-        whatsappDesc: "त्वरित समाधान के लिए व्हाट्सएप पर हमसे चैट करें।",
-        twitter: "सोशल मीडिया",
-        twitterDesc: "वास्तविक समय अपडेट के लिए @IRCTCofficial पर संपर्क करें।",
-        chatTitle: "IRCTC डिजिटल असिस्टेंट दिशा",
-        chatPlaceholder: "अपना प्रश्न यहाँ लिखें...",
-        send: "भेजें",
-        botGreeting: "IRCTC सहायता में आपका स्वागत है। मैं दिशा हूँ। आज मैं आपकी कैसे मदद कर सकती हूँ?",
-        quickReplies: ["टिकट बुक करें", "PNR स्टेटस जांचें", "टिकट रद्द करें", "रिफंड स्थिति"],
-        openChatPrompt: "मदद चाहिए? दिशा से चैट करने के लिए यहां क्लिक करें",
-        faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
-        officeTitle: "क्षेत्रीय कार्यालय",
-        defaultReplies: [
-            "कुछ मार्गों पर यात्रियों की संख्या अधिक है। यात्रा के दौरान कृपया अपना वैध पहचान पत्र साथ रखें।",
-            "खाता पहुँच समस्याओं के लिए, कृपया अपनी पंजीकृत ईमेल आईडी सत्यापित करें।",
-            "आप 'My Trips' अनुभाग से अपना टिकट रद्द कर सकते हैं।",
-            "ट्रेन अनुसूची के संबंध में तत्काल सहायता के लिए कृपया +91 139 पर कॉल करें।"
-        ]
-    }
-};
-
-const faqs = [
-    { q: 'How to cancel an e-ticket?', a: 'Go to My Trips → Select your booking → Click Cancel. Refund will be processed within 3-5 business days.' },
-    { q: 'What is the refund policy for Tatkal?', a: 'No refund is given on confirmed Tatkal tickets. Refund on RAC/Waitlisted Tatkal tickets is as per Railway rules.' },
-    { q: 'How to link Aadhaar with IRCTC?', a: 'Login → My Profile → Link Aadhaar → Enter your 12-digit Aadhaar number → Verify OTP.' },
-    { q: 'E-Wallet recharge issues?', a: 'Ensure your UPI/Net Banking payment completed. If amount debited but wallet not credited, raise a complaint on care@irctc.co.in.' },
-    { q: 'How to book wheelchair assistance?', a: 'Select e-Wheelchair service under Other Services. Available at 27+ major stations across India.' },
-    { q: 'Can I change my travel date after booking?', a: 'Date change is not allowed. You need to cancel and rebook. Cancellation charges apply as per class.' },
-];
-
-const offices = [
-    { city: 'New Delhi', addr: 'IRCTC Corporate Office, B-148, 11th Floor, Statesman House, New Delhi - 110001', phone: '011-23311263' },
-    { city: 'Mumbai', addr: 'Western Railways Building, Churchgate, Mumbai - 400020', phone: '022-22621956' },
-    { city: 'Kolkata', addr: 'Eastern Railways HQ, Fairlie Place, Kolkata - 700001', phone: '033-22203496' },
-    { city: 'Chennai', addr: 'Southern Railways HQ, Park Town, Chennai - 600003', phone: '044-25354995' },
-];
-
 const Support = () => {
-    const { language: lang } = useLanguage();
-    const [messages, setMessages] = useState([{ sender: 'bot', text: translations[lang]?.botGreeting || translations['en']?.botGreeting }]);
+    const { t: translate, language: lang } = useLanguage();
+    const t = translate('support');
+    
+    const [messages, setMessages] = useState([{ sender: 'bot', text: t.botGreeting || 'Welcome to IRCTC Support. How can I assist you today?' }]);
     const [input, setInput] = useState('');
     const [isChatOpen, setIsChatOpen] = useState(true);
     const [expandedFaq, setExpandedFaq] = useState(null);
     const [videoLoaded, setVideoLoaded] = useState(false);
     const messagesEndRef = useRef(null);
-
-    const t = translations[lang] || translations['en'];
 
     useEffect(() => {
         if (isChatOpen && messagesEndRef.current) {
@@ -92,9 +21,8 @@ const Support = () => {
     }, [messages, isChatOpen]);
 
     useEffect(() => {
-        const currentT = translations[lang] || translations['en'];
         if (messages.length === 1 && messages[0].sender === 'bot') {
-            setMessages([{ sender: 'bot', text: currentT.botGreeting }]);
+            setMessages([{ sender: 'bot', text: t.botGreeting }]);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lang]);
@@ -108,7 +36,13 @@ const Support = () => {
         setInput('');
 
         setTimeout(() => {
-            const botReply = t.defaultReplies[Math.floor(Math.random() * t.defaultReplies.length)];
+            const botReplies = [
+                "We are experiencing high passenger volume on some routes. Please ensure you carry valid ID proof during travel.",
+                "For account access issues, please verify your registered email ID.",
+                "You can cancel your ticket from the 'My Trips' section.",
+                "Please call +91 139 for immediate assistance regarding your train schedule."
+            ];
+            const botReply = botReplies[Math.floor(Math.random() * botReplies.length)];
             setMessages(prev => [...prev, { sender: 'bot', text: botReply }]);
         }, 800);
     };
@@ -154,10 +88,10 @@ const Support = () => {
                         </p>
                         <div className="flex flex-wrap gap-3 mt-6">
                             <a href="tel:139" className="bg-white/20 backdrop-blur-md text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-white/30 transition-all active:scale-95 border border-white/10">
-                                <span className="material-symbols-outlined text-lg">call</span> Call 139
+                                <span className="material-symbols-outlined text-lg">call</span> {t.callBtn || 'Call 139'}
                             </a>
                             <a href="mailto:care@irctc.co.in" className="bg-primary text-on-primary px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-primary/90 transition-all active:scale-95 shadow-lg shadow-primary/30">
-                                <span className="material-symbols-outlined text-lg">mail</span> Email Us
+                                <span className="material-symbols-outlined text-lg">mail</span> {t.emailBtn || 'Email Us'}
                             </a>
                         </div>
                     </div>
@@ -189,7 +123,7 @@ const Support = () => {
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight mb-6 sm:mb-8">{t.faqTitle}</h2>
                             <div className="space-y-3">
-                                {faqs.map((faq, i) => (
+                                {(t.faqs || []).map((faq, i) => (
                                     <div key={i} className="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden transition-all duration-300">
                                         <button
                                             onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
@@ -238,7 +172,7 @@ const Support = () => {
                                     ))}
                                     {messages.length === 1 && (
                                         <div className="flex flex-wrap gap-2 pt-2">
-                                            {t.quickReplies.map((reply, idx) => (
+                                            {(t.quickReplies || []).map((reply, idx) => (
                                                 <button key={idx} onClick={() => handleSendMessage(null, reply)} className="bg-surface-container-lowest border border-primary/20 text-primary text-xs font-bold px-4 py-2 rounded-full hover:bg-primary hover:text-on-primary transition-colors">
                                                     {reply}
                                                 </button>
@@ -250,7 +184,7 @@ const Support = () => {
 
                                 <form onSubmit={handleSendMessage} className="p-4 bg-surface-container-lowest border-t border-outline-variant/10">
                                     <div className="bg-surface-container-low rounded-xl flex items-center pr-2 focus-within:ring-2 ring-primary/30 transition-shadow">
-                                        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder={t.chatPlaceholder} className="flex-1 bg-transparent border-none p-4 text-sm font-medium outline-none placeholder:text-on-surface-variant/50 focus:ring-0 text-on-surface" />
+                                        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder={t.inputPlaceholder} className="flex-1 bg-transparent border-none p-4 text-sm font-medium outline-none placeholder:text-on-surface-variant/50 focus:ring-0 text-on-surface" />
                                         <button type="submit" disabled={!input.trim()} className={`p-3 rounded-lg transition-all ${input.trim() ? 'bg-primary text-on-primary shadow-sm active:scale-95' : 'bg-surface-container-highest text-on-surface-variant/30 cursor-not-allowed'}`}>
                                             <span className="material-symbols-outlined text-lg">send</span>
                                         </button>
@@ -275,7 +209,7 @@ const Support = () => {
                     <div className="mb-12 sm:mb-16">
                         <h2 className="text-2xl sm:text-3xl font-black text-on-surface tracking-tight mb-6 sm:mb-8">{t.officeTitle}</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {offices.map((office, i) => (
+                            {(t.offices || []).map((office, i) => (
                                 <div key={i} className="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/10 hover:shadow-md transition-shadow">
                                     <div className="flex items-center gap-2 mb-3">
                                         <span className="material-symbols-outlined text-primary text-lg">location_city</span>
@@ -293,11 +227,11 @@ const Support = () => {
                         <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                         <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                             <div>
-                                <h3 className="text-2xl sm:text-3xl font-black mb-2">Railway Emergency?</h3>
-                                <p className="text-white/80 font-medium text-sm sm:text-base max-w-lg">For security concerns, medical emergencies, or accidents on trains, dial the Railway Protection Force immediately.</p>
+                                <h3 className="text-2xl sm:text-3xl font-black mb-2">{t.emergencyTitle || 'Railway Emergency?'}</h3>
+                                <p className="text-white/80 font-medium text-sm sm:text-base max-w-lg">{t.emergencyDesc || 'For security concerns, dial 182.'}</p>
                             </div>
                             <a href="tel:182" className="bg-white text-primary px-8 py-4 rounded-2xl font-black text-lg flex items-center gap-3 hover:bg-white/90 transition-all active:scale-95 shadow-xl shrink-0">
-                                <span className="material-symbols-outlined text-2xl">emergency</span> Dial 182
+                                <span className="material-symbols-outlined text-2xl">emergency</span> {t.emergencyBtn || 'Dial 182'}
                             </a>
                         </div>
                     </div>

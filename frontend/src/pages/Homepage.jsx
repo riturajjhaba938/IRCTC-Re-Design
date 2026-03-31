@@ -60,7 +60,7 @@ const Homepage = () => {
                             {hpText.heroTitle || 'Book Your Train Ticket Seamlessly'}
                         </h1>
                         <p className="text-white/90 max-w-xl mx-auto text-sm sm:text-lg md:text-xl font-medium" style={{textShadow: '0 1px 10px rgba(0,0,0,0.4)'}}>
-                            Premium rail experiences curated for the modern traveller. Fast, seamless, and unmistakably Indian.
+                            {hpText.heroSubtitle || 'Premium rail experiences curated for the modern traveller.'}
                         </p>
                     </div>
 
@@ -77,7 +77,7 @@ const Homepage = () => {
                                                 <span className="material-symbols-outlined text-primary/60">location_on</span>
                                                 <input 
                                                     className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-xl outline-none placeholder:text-on-surface-variant/40 text-on-surface" 
-                                                    placeholder="Departure City" 
+                                                    placeholder={hpText.fromPlaceholder || "Departure City"} 
                                                     type="text" 
                                                     value={fromStation}
                                                     onChange={e => setFromStation(e.target.value)}
@@ -94,7 +94,7 @@ const Homepage = () => {
                                             <div className="flex items-center gap-3 justify-end text-right">
                                                 <input 
                                                     className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-xl text-right outline-none placeholder:text-on-surface-variant/40 text-on-surface" 
-                                                    placeholder="Arrival City" 
+                                                    placeholder={hpText.toPlaceholder || "Arrival City"} 
                                                     type="text" 
                                                     value={toStation}
                                                     onChange={e => setToStation(e.target.value)}
@@ -127,11 +127,9 @@ const Homepage = () => {
                                         <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">{hpText.classLabel || 'Class'}</label>
                                         <div className="bg-surface-container-lowest p-5 rounded-2xl">
                                             <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-lg cursor-pointer outline-none text-on-surface">
-                                                <option>All Classes</option>
-                                                <option>AC First Class</option>
-                                                <option>AC 2 Tier</option>
-                                                <option>AC 3 Tier</option>
-                                                <option>Sleeper</option>
+                                                {(hpText.classes || ["All Classes", "AC First Class", "AC 2 Tier", "AC 3 Tier", "Sleeper"]).map((cls, idx) => (
+                                                    <option key={idx}>{cls}</option>
+                                                ))}
                                             </select>
                                         </div>
                                     </div>
@@ -139,9 +137,9 @@ const Homepage = () => {
                                         <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2 ml-1 text-nowrap">{hpText.quotaLabel || 'Quota'}</label>
                                         <div className="bg-surface-container-lowest p-5 rounded-2xl">
                                             <select className="w-full bg-transparent border-none p-0 focus:ring-0 font-bold text-base sm:text-lg cursor-pointer outline-none text-on-surface">
-                                                <option>General</option>
-                                                <option>Ladies</option>
-                                                <option>Tatkal</option>
+                                                {(hpText.quotas || ["General", "Ladies", "Tatkal"]).map((q, idx) => (
+                                                    <option key={idx}>{q}</option>
+                                                ))}
                                             </select>
                                         </div>
                                     </div>

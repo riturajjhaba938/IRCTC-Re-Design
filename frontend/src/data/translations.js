@@ -47,11 +47,16 @@ const translations = {
         },
         homepage: {
             heroTitle: "Book Your Train Ticket Seamlessly",
+            heroSubtitle: "Premium rail experiences curated for the modern traveller. Fast, seamless, and unmistakably Indian.",
             fromLabel: "From Station",
+            fromPlaceholder: "Departure City",
             toLabel: "To Station",
+            toPlaceholder: "Arrival City",
             dateLabel: "Journey Date",
             classLabel: "Class",
+            classes: ["All Classes", "AC First Class", "AC 2 Tier", "AC 3 Tier", "Sleeper"],
             quotaLabel: "Quota",
+            quotas: ["General", "Ladies", "Tatkal"],
             searchBtn: "Search Trains",
             filters: {
                 available: "Available Tickets",
@@ -163,12 +168,45 @@ const translations = {
             title: "Help & Support",
             subtitle: "24/7 Premium customer resolution center. Reach out to us via call, chat, or designated email branches.",
             speakAgent: "Speak to an Agent",
-            speakDesc: "Call our dedicated premium support line anytime.",
+            speakDesc: "Call our dedicated premium support line anytime, 24/7.",
             emailSupport: "Email Support",
             emailDesc: "For document submissions, partnership queries, and escalations.",
+            whatsapp: "WhatsApp Support",
+            whatsappDesc: "Chat with us instantly on WhatsApp for quick resolutions.",
+            twitter: "Social Media",
+            twitterDesc: "Reach us on Twitter/X @IRCTCofficial for real-time updates.",
             chatTitle: "IRCTC Assistant Disha",
             chatOpenPrompt: "Need help? Click here to chat with Disha",
-            inputPlaceholder: "Type your query here..."
+            inputPlaceholder: "Type your query here...",
+            callBtn: "Call 139",
+            emailBtn: "Email Us",
+            faqTitle: "Frequently Asked Questions",
+            officeTitle: "Regional Offices",
+            emergencyTitle: "Railway Emergency?",
+            emergencyDesc: "For security concerns, medical emergencies, or accidents on trains, dial the Railway Protection Force immediately.",
+            emergencyBtn: "Dial 182",
+            botGreeting: "Welcome to IRCTC Support. I am Disha. How can I assist you today?",
+            quickReplies: ["Book Ticket", "Check PNR Status", "Cancel Ticket", "Refund Status"],
+            defaultReplies: [
+                "We are experiencing high passenger volume on some routes. Please ensure you carry valid ID proof during travel.",
+                "For account access issues, please verify your registered email ID.",
+                "You can cancel your ticket from the 'My Trips' section.",
+                "Please call +91 139 for immediate assistance regarding your train schedule."
+            ],
+            faqs: [
+                { q: "How to cancel an e-ticket?", a: "Go to My Trips → Select your booking → Click Cancel. Refund will be processed within 3-5 business days." },
+                { q: "What is the refund policy for Tatkal?", a: "No refund is given on confirmed Tatkal tickets. Refund on RAC/Waitlisted Tatkal tickets is as per Railway rules." },
+                { q: "How to link Aadhaar with IRCTC?", a: "Login → My Profile → Link Aadhaar → Enter your 12-digit Aadhaar number → Verify OTP." },
+                { q: "E-Wallet recharge issues?", a: "Ensure your UPI/Net Banking payment completed. If amount debited but wallet not credited, raise a complaint on care@irctc.co.in." },
+                { q: "How to book wheelchair assistance?", a: "Select e-Wheelchair service under Other Services. Available at 27+ major stations across India." },
+                { q: "Can I change my travel date after booking?", a: "Date change is not allowed. You need to cancel and rebook. Cancellation charges apply as per class." }
+            ],
+            offices: [
+                { city: "New Delhi", addr: "IRCTC Corporate Office, B-148, 11th Floor, Statesman House, New Delhi - 110001", phone: "011-23311263" },
+                { city: "Mumbai", addr: "Western Railways Building, Churchgate, Mumbai - 400020", phone: "022-22621956" },
+                { city: "Kolkata", addr: "Eastern Railways HQ, Fairlie Place, Kolkata - 700001", phone: "033-22203496" },
+                { city: "Chennai", addr: "Southern Railways HQ, Park Town, Chennai - 600003", phone: "044-25354995" }
+            ]
         },
         login: {
             welcome: "Welcome Back.",
@@ -246,11 +284,16 @@ const translations = {
         },
         homepage: {
             heroTitle: "अपना ट्रेन टिकट आसानी से बुक करें",
+            heroSubtitle: "आधुनिक यात्री के लिए तैयार प्रीमियम रेल अनुभव। तेज़, निर्बाध और स्पष्ट रूप से भारतीय।",
             fromLabel: "प्रस्थान स्टेशन",
+            fromPlaceholder: "प्रस्थान शहर",
             toLabel: "गंतव्य स्टेशन",
+            toPlaceholder: "आगमन शहर",
             dateLabel: "यात्रा की तिथि",
             classLabel: "श्रेणी (क्लास)",
+            classes: ["सभी श्रेणियां", "एसी प्रथम श्रेणी", "एसी 2 टियर", "एसी 3 टियर", "स्लीपर"],
             quotaLabel: "कोटा",
+            quotas: ["सामान्य", "महिला", "तत्काल"],
             searchBtn: "ट्रेन खोजें",
             filters: {
                 available: "उपलब्ध टिकट",
@@ -365,9 +408,42 @@ const translations = {
             speakDesc: "किसी भी समय हमारी समर्पित प्रीमियम सपोर्ट लाइन पर कॉल करें।",
             emailSupport: "ईमेल सहायता",
             emailDesc: "दस्तावेज़ जमा करने, साझेदारी के प्रश्नों और मामलों के लिए।",
+            whatsapp: "व्हाट्सएप सहायता",
+            whatsappDesc: "त्वरित समाधान के लिए व्हाट्सएप पर हमसे चैट करें।",
+            twitter: "सोशल मीडिया",
+            twitterDesc: "वास्तविक समय अपडेट के लिए @IRCTCofficial पर संपर्क करें।",
             chatTitle: "IRCTC असिस्टेंट दिशा",
             chatOpenPrompt: "मदद चाहिए? दिशा से चैट करने के लिए यहां क्लिक करें",
-            inputPlaceholder: "अपना प्रश्न यहाँ लिखें..."
+            inputPlaceholder: "अपना प्रश्न यहाँ लिखें...",
+            callBtn: "कॉल करें 139",
+            emailBtn: "हमें ईमेल करें",
+            faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+            officeTitle: "क्षेत्रीय कार्यालय",
+            emergencyTitle: "रेलवे आपातकाल?",
+            emergencyDesc: "सुरक्षा चिंताओं, चिकित्सा आपात स्थितियों या ट्रेनों में दुर्घटनाओं के लिए, तुरंत रेलवे सुरक्षा बल को डायल करें।",
+            emergencyBtn: "डायल करें 182",
+            botGreeting: "IRCTC सहायता में आपका स्वागत है। मैं दिशा हूँ। आज मैं आपकी कैसे मदद कर सकती हूँ?",
+            quickReplies: ["टिकट बुक करें", "PNR स्टेटस जांचें", "टिकट रद्द करें", "रिफंड स्थिति"],
+            defaultReplies: [
+                "कुछ मार्गों पर यात्रियों की संख्या अधिक है। यात्रा के दौरान कृपया अपना वैध पहचान पत्र साथ रखें।",
+                "खाता पहुँच समस्याओं के लिए, कृपया अपनी पंजीकृत ईमेल आईडी सत्यापित करें।",
+                "आप 'My Trips' अनुभाग से अपना टिकट रद्द कर सकते हैं।",
+                "ट्रेन अनुसूची के संबंध में तत्काल सहायता के लिए कृपया +91 139 पर कॉल करें।"
+            ],
+            faqs: [
+                { q: "ई-टिकट कैसे रद्द करें?", a: "My Trips → अपनी बुकिंग चुनें → Cancel पर क्लिक करें। रिफंड 3-5 कार्यदिवसों में संसाधित किया जाएगा।" },
+                { q: "तत्काल के लिए रिफंड नीति क्या है?", a: "कन्फर्म तत्काल टिकटों पर कोई रिफंड नहीं दिया जाता है। RAC/वेटलिस्टेड तत्काल टिकटों पर रिफंड रेलवे नियमों के अनुसार है।" },
+                { q: "IRCTC के साथ आधार कैसे लिंक करें?", a: "लॉगिन → My Profile → Link Aadhaar → अपना 12-अंकीय आधार नंबर दर्ज करें → OTP सत्यापित करें।" },
+                { q: "ई-वॉलेट रिचार्ज समस्या?", a: "सुनिश्चित करें कि आपका UPI/नेट बैंकिंग भुगतान पूरा हो गया है। यदि राशि डेबिट हो गई है लेकिन वॉलेट में जमा नहीं हुई है, तो care@irctc.co.in पर शिकायत दर्ज करें।" },
+                { q: "व्हीलचेयर सहायता कैसे बुक करें?", a: "अन्य सेवाओं के तहत ई-व्हीलचेयर सेवा चुनें। भारत भर के 27+ प्रमुख स्टेशनों पर उपलब्ध है।" },
+                { q: "क्या मैं बुकिंग के बाद अपनी यात्रा की तारीख बदल सकता हूँ?", a: "तारीख बदलने की अनुमति नहीं है। आपको रद्द करके फिर से बुक करना होगा। श्रेणी के अनुसार रद्दीकरण शुल्क लागू होते हैं।" }
+            ],
+            offices: [
+                { city: "नई दिल्ली", addr: "IRCTC कॉर्पोरेट कार्यालय, B-148, 11वीं मंजिल, स्टेट्समैन हाउस, नई दिल्ली - 110001", phone: "011-23311263" },
+                { city: "मुंबई", addr: "पश्चिमी रेलवे भवन, चर्चगेट, मुंबई - 400020", phone: "022-22621956" },
+                { city: "कोलकाता", addr: "पूर्वी रेलवे मुख्यालय, फेयरली प्लेस, कोलकाता - 700001", phone: "033-22203496" },
+                { city: "चेन्नई", addr: "दक्षिणी रेलवे मुख्यालय, पार्क टाउन, चेन्नई - 600003", phone: "044-25354995" }
+            ]
         },
         login: {
             welcome: "वापसी पर स्वागत है।",

@@ -128,7 +128,7 @@ const Navbar = () => {
                             {navText.otherServices.title}
                         </Link>
                         <div className="absolute top-[100%] right-0 w-64 bg-surface-container-lowest border border-outline-variant/20 shadow-[0_10px_40px_rgba(0,0,0,0.1)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 z-50 flex flex-col py-2 rounded-xl">
-                            <Link to="/services" className="px-5 py-2.5 text-sm font-bold text-on-surface hover:bg-primary/5 hover:text-primary transition-colors">Premium IRCTC Services</Link>
+                            <Link to="/services" className="px-5 py-2.5 text-sm font-bold text-on-surface hover:bg-primary/5 hover:text-primary transition-colors">{t('services').title || 'Premium IRCTC Services'}</Link>
                             <span className="px-5 py-2.5 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors cursor-pointer">{navText.otherServices.irctcIpay}</span>
                             <span className="px-5 py-2.5 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors cursor-pointer">{navText.otherServices.buses}</span>
                             <span className="px-5 py-2.5 text-sm font-medium text-on-surface hover:bg-primary/5 hover:text-primary transition-colors cursor-pointer">{navText.otherServices.flights}</span>
