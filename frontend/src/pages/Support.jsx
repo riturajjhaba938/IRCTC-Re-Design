@@ -119,9 +119,9 @@ const Support = () => {
 
             <main className="flex-1 pt-24 sm:pt-28 pb-20">
                 {/* ===== FULL-WIDTH VIDEO HERO ===== */}
-                <div className="relative overflow-hidden mb-10 sm:mb-16 mx-4 sm:mx-6 lg:mx-auto max-w-7xl rounded-[2rem] sm:rounded-[3rem] shadow-2xl group">
+                <div className="relative overflow-hidden mb-10 sm:mb-16 mx-4 sm:mx-6 lg:mx-auto max-w-7xl rounded-[2rem] sm:rounded-[3rem] shadow-2xl group bg-[#0b0f19] min-h-[350px] sm:min-h-[450px] md:min-h-[550px]">
                     <video 
-                        className={`w-full h-[350px] sm:h-[450px] md:h-[550px] object-cover transition-all duration-[2s] ease-out ${videoLoaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2s] ease-out ${videoLoaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
                         autoPlay 
                         loop 
                         muted 
@@ -131,8 +131,8 @@ const Support = () => {
                         <source src="/contact_bg.mp4" type="video/mp4" />
                     </video>
                     {/* Animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-surface/10"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-surface/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
                     
                     {/* Floating particles effect */}
                     <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-ping"></div>
