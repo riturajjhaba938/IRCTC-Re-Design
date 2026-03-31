@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import dummyData from '../data/irctc_dummy_data.json';
 import Navbar from '../components/Navbar';
@@ -20,6 +20,16 @@ const Homepage = () => {
     const [toStation, setToStation] = useState('New Delhi (NDLS)');
     const [date, setDate] = useState('12 Apr, 2026');
 
+    // Theme-aware hero background
+    const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            setIsDark(document.documentElement.classList.contains('dark'));
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        return () => observer.disconnect();
+    }, []);
+
     const handleSwap = () => {
         setFromStation(toStation);
         setToStation(fromStation);
@@ -37,8 +47,13 @@ const Homepage = () => {
                 {/* Hero Section */}
                 <section className="relative px-4 sm:px-6 py-16 sm:py-20 md:py-28 overflow-hidden rounded-b-[2rem] md:rounded-b-[4rem] mb-8 sm:mb-12 shadow-sm border-b border-outline-variant/10">
                     <div className="absolute inset-0 z-0">
-                        <img src="/vande_bharat_bg.png" alt="Vande Bharat Express" className="w-full h-full object-cover object-center" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-surface"></div>
+                        <img 
+                            key={isDark ? 'dark' : 'light'}
+                            src={isDark ? '/hero_dark.jpg' : '/hero_light.jpg'} 
+                            alt="Vande Bharat Express" 
+                            className="w-full h-full object-cover object-center transition-opacity duration-700" 
+                        />
+                        <div className={`absolute inset-0 transition-all duration-700 ${isDark ? 'bg-gradient-to-b from-black/70 via-black/50 to-surface' : 'bg-gradient-to-b from-black/50 via-black/30 to-surface'}`}></div>
                     </div>
                     <div className="max-w-7xl mx-auto relative z-10 text-center mb-8 sm:mb-16">
                         <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white -tracking-[0.03em] mb-4 sm:mb-6 leading-tight" style={{textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)'}}>
