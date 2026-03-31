@@ -14,15 +14,15 @@ const Services = () => {
         <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col">
             <Navbar />
 
-            <main className="flex-1 pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+            <main className="flex-1 pt-24 sm:pt-32 pb-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-4 capitalize">{svcText.title || 'Premium IRCTC Services'}</h1>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-4 capitalize">{svcText.title || 'Premium IRCTC Services'}</h1>
                     <p className="text-on-surface-variant font-medium text-lg max-w-2xl mx-auto">{svcText.subtitle || 'Explore all our partner services seamlessly integrated with your IRCTC ID.'}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Cargo */}
-                    <div className="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/10 shadow-lg hover:-translate-y-2 transition-transform duration-500 cursor-pointer group">
+                    <div className="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] border border-outline-variant/10 shadow-lg hover:-translate-y-2 transition-transform duration-500 cursor-pointer group">
                         <div className="w-16 h-16 bg-secondary-container/30 text-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span className="material-symbols-outlined text-3xl">local_shipping</span>
                         </div>
